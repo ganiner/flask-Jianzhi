@@ -37,26 +37,17 @@
 
 ### 效果图
 
-![](G:\2019以前的project\gitsc\flask-Jianzhi\img\webhome.png)
+![](https://github.com/agamgn/flask-Jianzhi/blob/master/img/webhome.png)
 
-![jianzhihome](G:\2019以前的project\gitsc\flask-Jianzhi\img\jianzhihome.png)
+![jianzhihome](https://github.com/agamgn/flask-Jianzhi/blob/master/img/jianzhihome.png)
 
-![jianzhihome2](G:\2019以前的project\gitsc\flask-Jianzhi\img\jianzhihome2.png)
+![jianzhihome2](https://github.com/agamgn/flask-Jianzhi/blob/master/img/jianzhihome2.png)
 
-![pingtai](G:\2019以前的project\gitsc\flask-Jianzhi\img\pingtai.png)
+![pingtai](https://github.com/agamgn/flask-Jianzhi/blob/master/img/pingtai.png)
 
-![wapindex](G:\2019以前的project\gitsc\flask-Jianzhi\img\wapindex.png)![wapme](G:\2019以前的project\gitsc\flask-Jianzhi\img\wapme.png)
+![wapindex](https://github.com/agamgn/flask-Jianzhi/blob/master/img/wapindex.png)![wapme](G:\2019以前的project\gitsc\flask-Jianzhi\img\wapme.png)
 
-
-
-![](G:\2019以前的project\gitsc\flask-Jianzhi\img\wappost.png)
-
-
-
-
-
-
-
+![](https://github.com/agamgn/flask-Jianzhi/blob/master/img/wappost.png)
 
 
 ### 技术栈
