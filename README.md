@@ -66,7 +66,7 @@
 https://github.com/agamgn/flask-Jianzhi.git
 #安装依赖
 pip install -r requirement.txt
-#运行sql
+#运行sql,修改config/base_setting.py文件的配置
 #启动项目
 python manage.py runserver
 #默认超级管理员
