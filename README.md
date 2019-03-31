@@ -45,7 +45,9 @@
 
 ![pingtai](https://github.com/agamgn/flask-Jianzhi/blob/master/img/pingtai.png)
 
-![wapindex](https://github.com/agamgn/flask-Jianzhi/blob/master/img/wapindex.png)![wapme](G:\2019以前的project\gitsc\flask-Jianzhi\img\wapme.png)
+![wapindex](https://github.com/agamgn/flask-Jianzhi/blob/master/img/wapindex.png)
+
+![wapme](https://github.com/agamgn/flask-Jianzhi/blob/master/img/wapme.png)
 
 ![](https://github.com/agamgn/flask-Jianzhi/blob/master/img/wappost.png)
 
