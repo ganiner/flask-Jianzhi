@@ -1,0 +1,132 @@
+{% extends "admin/main_base.html" %}
+
+{%block css %}
+<script src="{{buildStaticUrl('/admin/jquery-3.3.1.min.js')}}"></script>
+<script src="{{buildStaticUrl('/admin/layui.all.js')}}"></script>
+<script src="{{ buildStaticUrl('/admin/common.js') }}"></script>
+<script src="{{ buildStaticUrl('/admin/js/login.js')}}"></script>
+<style type="text/css">
+		.login_main{
+			margin-top: 50px;
+			padding-top: 100px;
+		}
+		.login_title{
+			font-size:26px;
+			padding-bottom:20px;s
+			color:#902d30;
+			text-align: center;
+			margin: 25px;
+
+		}
+		.login_plane{
+			border-radius: 10px;
+			margin-left:66px;
+			background:	rgba(255,255,255,.7)
+		}
+		.footer_left{
+			float: left;
+			margin:90px 150px;
+			font-size: 20px;
+
+		}
+		.footer_right{
+			float: right;
+			margin:90px 150px;
+			font-size: 20px;
+		}
+	</style>
+{% endblock %}
+
+
+{% block content %}
+<body style="background: url('{{buildStaticUrl("/images/admin/gw-bg.jpg")}}') 100% 55% ;background-size: cover;">
+
+<div class="layui-container login_main">  
+<div class="layui-row">
+	<div class="layui-col-md6 layui-col-xs6">
+		              
+        <div class="layui-col-md6" style="text-align: center;">
+            <a href="javascript:void(0);" class="thumbnail">
+                <img src="{{buildStaticUrl('/images/admin/qrcode.jpg')}}" width="200px">
+            </a>
+            <p style="color:#EE00EE"><b>小程序码</b></p>
+        </div>
+        <div class="layui-col-md6" style="text-align: center;">
+            <a href="javascript:void(0);" class="thumbnail">
+                <img src="{{buildStaticUrl('/images/admin/qrcode.jpg')}}" width="200px">
+            </a>
+            <p style="color:#EE00EE"><b>公众号码</b></p>
+        </div>   
+	</div>
+
+
+
+	<div class="layui-col-md4 layui-col-xs4 login_plane">
+		<div class="login_title">
+			<b>兼职客儿微信管理系统</b>
+		</div>
+		
+	 <hr class="hr15">
+
+<div class="layui-form login_wrap">
+			<div class="layui-form-item">
+				    <label class="layui-icon layui-icon-username layui-form-label"></label>
+				        <div class="layui-input-inline">
+    			  <input type="text" name="username" required  lay-verify="required" placeholder="请输入用户名登录" autocomplete="off" class="layui-input">
+    			</div>
+   			</div>
+
+
+
+
+
+   			<div class="layui-form-item">
+   					<label class="layui-icon layui-icon-password layui-form-label"></label>
+   					 <div class="layui-input-inline">
+    			  <input type="password" name="password" required  lay-verify="required" placeholder="请输入登录密码" autocomplete="off" class="layui-input">
+   				</div>
+			</div>
+
+
+
+			<div class="layui-form-item">
+
+				<div class="layui-row">
+					<div class="layui-col-xs6">
+            <label class="layadmin-user-login-icon layui-icon layui-icon-vercode layui-form-label"></label>
+  
+            <input type="text" name="vercode"  lay-verify="required" placeholder="验证码" class="layui-input codes" style="width: 80px;">
+
+          </div>
+
+
+          <div class="layui-col-xs3">
+              <img id="codes" src="{{url_for('adminUserRoute.code')}}" onclick="this.src='/login/code?'+ Math.random()" style="padding-left: 10px;height: 38px;width: 100px;">
+          </div>
+
+				</div>
+			</div>
+
+
+
+			  <div class="layui-form-item" style=" margin-bottom: 50px;">
+		<div class="layui-input-block">
+		  <button type="button" class="layui-btn do-login" lay-submit lay-filter="formDemo">登录</button>
+		  <button type="reset" class="layui-btn  layui-btn-primary" style="margin-left: 50px;">重置</button>
+		</div>
+		</div>
+		</div>
+
+	</div>
+
+</div>
+
+
+</div>
+
+<footer class="layui-main">
+<div class="footer_left" ><a href="#" style="color:#EE00EE"><b>Agam提供技术支持</b></a></div>
+<div class="footer_right" style="color:#EE00EE"><small><b>© 2018</b></small></div>
+</footer>
+
+{% endblock %}

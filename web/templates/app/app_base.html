@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="兼职客儿,兼职">
+  <meta name="keywords" content="兼职客儿,兼职>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>兼职客儿</title>
+  <meta name="renderer" content="webkit">
+  <meta name="apple-mobile-web-app-title" content="兼职客儿" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+	<link rel="shortcut icon" href="{{buildStaticUrl('/images/favicon.ico')}}" />
+  <meta name="mobile-web-app-capable" content="yes">
+	<link rel="shortcut icon" href="{{buildStaticUrl('/images/favicon.ico')}}" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+  <meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">
+  <meta name="msapplication-TileColor" content="#0e90d2">
+  <meta name="applicable-device" content="mobile" />
+  <meta name="location" content="province=四川;city=成都">
+  <meta name="applicable-device" content="pc,mobile">
+    <meta name="MobileOptimized" content="320"/>
+    <meta name="HandheldFriendly" content="true"/>
+
+<link rel="stylesheet" type="text/css" href="{{buildStaticUrl('/app/jqweui/dist/lib/weui.min.css')}}">
+<link rel="stylesheet" type="text/css" href="{{buildStaticUrl('/app/jqweui/dist/css/jquery-weui.css')}}">
+
+
+         {%block css %}{% endblock %}
+
+</head>
+<body>
+
+ {% block content %}{% endblock %}
+
+<div class="weui-tabbar">
+        <a href="{{url_for('appHome.index')}}" class="weui-tabbar__item weui-bar__item--on">
+          <!--<span class="weui-badge" style="position: absolute;top: -.4em;right: 1em;">8</span>-->
+          <div class="weui-tabbar__icon">
+            <img src="{{buildStaticUrl('/images/app/home.png')}}" alt="">
+          </div>
+          <p class="weui-tabbar__label">首页</p>
+        </a>
+        <a href="{{url_for('appPosts.index')}}" class="weui-tabbar__item">
+          <div class="weui-tabbar__icon">
+            <img src="{{buildStaticUrl('/images/app/post.png')}}" alt="">
+          </div>
+          <!-- 发帖的在商家版里面 -->
+          <p class="weui-tabbar__label">发帖</p>
+        </a>
+        <a href="{{url_for('appMe.index')}}" class="weui-tabbar__item">
+          <div class="weui-tabbar__icon">
+            <img src="{{buildStaticUrl('/images/app/me.png')}}" alt="">
+          </div>
+          <p class="weui-tabbar__label">我的</p>
+        </a>
+</div>
+
+
+
+
+
+
+ {% block js %}{% endblock %}
+</body>
+</html>

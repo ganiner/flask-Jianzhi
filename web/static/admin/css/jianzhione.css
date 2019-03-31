@@ -1,0 +1,37 @@
+.left{
+		float: left;
+	}
+	.left img{
+		margin-right:70px;
+	}
+	.right{
+		float: right;
+
+	}
+	.contents{
+		border: 1px solid #c7c7c7;
+		margin: 0;
+	}
+	.contents-head{
+		height: 40px;
+		line-height: 35px;
+		border-bottom: 1px solid #e7e7eb;
+		padding: 10px 30px;
+		background-color: #f8f8f8;
+		font-size: 22px;
+	}
+	.content-left{
+		width: 18%;
+
+	}
+	.content-right{
+		float: left;
+		width: 82%;
+	}
+    .head ul{
+	width: 1280px;
+	margin: 0px auto 20px auto;
+        clear: both;
+	height: 60px;
+
+}

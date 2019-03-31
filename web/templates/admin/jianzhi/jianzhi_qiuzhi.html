@@ -1,0 +1,369 @@
+{% extends "admin/jianzhi/jianzhi_base.html" %}
+
+{% block content %}
+
+	 <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+      <ul class="layui-tab-title">
+        <li class="layui-this">已报名</li>
+        <li>已录用</li>
+        <li>已到岗</li>
+        <li>已完成</li>
+      </ul>
+      <div class="layui-tab-content">
+
+    <div class="layui-tab-item layui-show">
+<table class="layui-hide"  id="tables_Enrolment" lay-filter="test"></table>
+
+<script type="text/html" id="toolbars_Enrolment">
+  <div class="layui-btn-container">
+    <button class="layui-btn layui-btn-sm" lay-event="getCheckData">获取选中行数据</button>
+    <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button>
+  </div>
+</script>
+
+<script type="text/html" id="bar_Enrolment">
+  <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+    </div>
+
+
+    <div class="layui-tab-item">
+        <table class="layui-hide"  id="tables_Hired" lay-filter="test"></table>
+
+<script type="text/html" id="toolbars_Hired">
+  <div class="layui-btn-container">
+    <button class="layui-btn layui-btn-sm" lay-event="getCheckData">获取选中行数据</button>
+    <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button>
+  </div>
+</script>
+
+<script type="text/html" id="bar_Hired">
+  <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+
+    </div>
+
+    <div class="layui-tab-item">
+
+        <table class="layui-hide"  id="tables_arrived" lay-filter="test"></table>
+
+<script type="text/html" id="toolbars_arrived">
+  <div class="layui-btn-container">
+    <button class="layui-btn layui-btn-sm" lay-event="getCheckData">获取选中行数据</button>
+    <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button>
+  </div>
+</script>
+
+<script type="text/html" id="bar_arrived">
+  <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+
+    </div>
+
+
+    <div class="layui-tab-item"><table class="layui-hide"  id="tables_Completed" lay-filter="test"></table>
+
+<script type="text/html" id="toolbars_Completed">
+  <div class="layui-btn-container">
+    <button class="layui-btn layui-btn-sm" lay-event="getCheckData">获取选中行数据</button>
+    <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button>
+  </div>
+</script>
+
+<script type="text/html" id="bar_Completed">
+  <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+    </div>
+
+
+      </div>
+    </div>
+{% endblock %}
+
+{% block js %}
+
+
+<script>
+//注意：导航 依赖 element 模块，否则无法进行功能性操作
+layui.use('element', function(){
+  var element = layui.element;
+
+});
+</script>
+<script>
+layui.use(['element', 'layer'], function(){
+  var element = layui.element
+  ,layer = layui.layer;
+  
+  element.on('tab(docDemoTabBrief)', function(data){
+    // layer.msg('切到到了'+ data.index + '：' + this.innerHTML);
+  });
+});
+</script>
+
+
+<!--第一个-->
+<script>
+    layui.use('table', function(){
+  var table = layui.table;
+  table.render({
+    elem: '#tables_Enrolment'
+    ,url:'http://127.0.0.1:5000/api/sign_up/?is_baoming='+1
+    ,toolbar: '#toolbars_Enrolment'
+    ,title: '用户数据表'
+    ,cols: [[
+     {type: 'checkbox', fixed: 'left',width:"5%"}
+      ,{field:'uid', title:'报名人', width:"20%"}
+      ,{field:'pid', title:'可以做哟个查询帖子的', width:"20%"}
+      ,{field:'is_position', title:'帖子标题', width:"25%"}
+      ,{fixed: 'right', title:'操作', toolbar: '#bar_Completed', width:"30%"}
+    ]]
+    ,page: { //支持传入 laypage 组件的所有参数（某些参数除外，如：jump/elem） - 详见文档
+
+        layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局
+      //,curr: 5 //设定初始在第 5 页
+      ,groups: 5 //只显示 1 个连续页码
+      ,first: false //不显示首页
+      ,last: false //不显示尾页
+    }
+  });
+
+  //头工具栏事件
+  table.on('toolbar_Enrolment(test)', function(obj){
+    var checkStatus = table.checkStatus(obj.config.id);
+    switch(obj.event){
+      case 'getCheckData':
+        var data = checkStatus.data;
+        layer.alert(JSON.stringify(data));
+      break;
+      case 'getCheckLength':
+        var data = checkStatus.data;
+        layer.msg('选中了：'+ data.length + ' 个');
+      break;
+    };
+  });
+
+  //监听行工具事件
+  table.on('tool(test)', function(obj){
+    var data = obj.data;
+    //console.log(obj)
+    if(obj.event === 'del'){
+      layer.confirm('真的删除行么', function(index){
+        obj.del();
+        layer.close(index);
+      });
+    } else if(obj.event === 'edit'){
+      layer.prompt({
+        formType: 2
+        ,value: data.email
+      }, function(value, index){
+        obj.update({
+          email: value
+        });
+        layer.close(index);
+      });
+    }
+  });
+});
+</script>
+
+
+
+<!--第二个-->
+<script>
+    layui.use('table', function(){
+  var table = layui.table;
+  table.render({
+    elem: '#tables_Hired'
+    ,url:'http://127.0.0.1:5000/api/sign_up/?is_confirme='+1
+    ,toolbar: '#toolbars_Enrolment'
+    ,title: '用户数据表'
+    ,cols: [[
+     {type: 'checkbox', fixed: 'left',width:"5%"}
+      ,{field:'uid', title:'报名人', width:"20%"}
+      ,{field:'pid', title:'可以做哟个查询帖子的', width:"20%"}
+      ,{field:'is_position', title:'帖子标题', width:"25%"}
+      ,{fixed: 'right', title:'操作', toolbar: '#bar_Completed', width:"30%"}
+    ]]
+    ,page: { //支持传入 laypage 组件的所有参数（某些参数除外，如：jump/elem） - 详见文档
+
+        layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局
+      //,curr: 5 //设定初始在第 5 页
+      ,groups: 5 //只显示 1 个连续页码
+      ,first: false //不显示首页
+      ,last: false //不显示尾页
+    }
+  });
+
+  //头工具栏事件
+  table.on('toolbar__Hired(test)', function(obj){
+    var checkStatus = table.checkStatus(obj.config.id);
+    switch(obj.event){
+      case 'getCheckData':
+        var data = checkStatus.data;
+        layer.alert(JSON.stringify(data));
+      break;
+      case 'getCheckLength':
+        var data = checkStatus.data;
+        layer.msg('选中了：'+ data.length + ' 个');
+      break;
+    };
+  });
+
+  //监听行工具事件
+  table.on('tool(test)', function(obj){
+    var data = obj.data;
+    //console.log(obj)
+    if(obj.event === 'del'){
+      layer.confirm('真的删除行么', function(index){
+        obj.del();
+        layer.close(index);
+      });
+    } else if(obj.event === 'edit'){
+      layer.prompt({
+        formType: 2
+        ,value: data.email
+      }, function(value, index){
+        obj.update({
+          email: value
+        });
+        layer.close(index);
+      });
+    }
+  });
+});
+</script>
+<!--第三个-->
+<script>
+    layui.use('table', function(){
+  var table = layui.table;
+  table.render({
+    elem: '#tables_arrived'
+    ,url:'/api/sign_up/?is_sign_in='+1
+    ,toolbar: '#toolbars_Enrolment'
+    ,title: '用户数据表'
+    ,cols: [[
+     {type: 'checkbox', fixed: 'left',width:"5%"}
+      ,{field:'uid', title:'报名人', width:"20%"}
+      ,{field:'pid', title:'可以做哟个查询帖子的', width:"20%"}
+      ,{field:'is_position', title:'帖子标题', width:"25%"}
+      ,{fixed: 'right', title:'操作', toolbar: '#bar_Completed', width:"30%"}
+    ]]
+    ,page: { //支持传入 laypage 组件的所有参数（某些参数除外，如：jump/elem） - 详见文档
+
+        layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局
+      //,curr: 5 //设定初始在第 5 页
+      ,groups: 5 //只显示 1 个连续页码
+      ,first: false //不显示首页
+      ,last: false //不显示尾页
+    }
+  });
+
+  //头工具栏事件
+  table.on('toolbar_arrived(test)', function(obj){
+    var checkStatus = table.checkStatus(obj.config.id);
+    switch(obj.event){
+      case 'getCheckData':
+        var data = checkStatus.data;
+        layer.alert(JSON.stringify(data));
+      break;
+      case 'getCheckLength':
+        var data = checkStatus.data;
+        layer.msg('选中了：'+ data.length + ' 个');
+      break;
+    };
+  });
+
+  //监听行工具事件
+  table.on('tool(test)', function(obj){
+    var data = obj.data;
+    //console.log(obj)
+    if(obj.event === 'del'){
+      layer.confirm('真的删除行么', function(index){
+        obj.del();
+        layer.close(index);
+      });
+    } else if(obj.event === 'edit'){
+      layer.prompt({
+        formType: 2
+        ,value: data.email
+      }, function(value, index){
+        obj.update({
+          email: value
+        });
+        layer.close(index);
+      });
+    }
+  });
+});
+</script>
+<!--第四个-->
+<script>
+    layui.use('table', function(){
+  var table = layui.table;
+  table.render({
+    elem: '#tables_Completed'
+    ,url:'/api/sign_up/?is_complete='+1
+    ,toolbar: '#toolbars_Completed'
+    ,title: '用户数据表'
+    ,cols: [[
+     {type: 'checkbox', fixed: 'left',width:"5%"}
+      ,{field:'uid', title:'报名人', width:"20%"}
+      ,{field:'pid', title:'可以做哟个查询帖子的', width:"20%"}
+      ,{field:'is_position', title:'帖子标题', width:"25%"}
+      ,{fixed: 'right', title:'操作', toolbar: '#bar_Completed', width:"30%"}
+    ]]
+    ,page: { //支持传入 laypage 组件的所有参数（某些参数除外，如：jump/elem） - 详见文档
+
+        layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局
+      //,curr: 5 //设定初始在第 5 页
+      ,groups: 5 //只显示 1 个连续页码
+      ,first: false //不显示首页
+      ,last: false //不显示尾页
+    }
+  });
+
+  //头工具栏事件
+  table.on('toolbar_Completed(test)', function(obj){
+    var checkStatus = table.checkStatus(obj.config.id);
+    switch(obj.event){
+      case 'getCheckData':
+        var data = checkStatus.data;
+        layer.alert(JSON.stringify(data));
+      break;
+      case 'getCheckLength':
+        var data = checkStatus.data;
+        layer.msg('选中了：'+ data.length + ' 个');
+      break;
+    };
+  });
+
+  //监听行工具事件
+  table.on('tool(test)', function(obj){
+    var data = obj.data;
+    //console.log(obj)
+    if(obj.event === 'del'){
+      layer.confirm('真的删除行么', function(index){
+        obj.del();
+        layer.close(index);
+      });
+    } else if(obj.event === 'edit'){
+      layer.prompt({
+        formType: 2
+        ,value: data.email
+      }, function(value, index){
+        obj.update({
+          email: value
+        });
+        layer.close(index);
+      });
+    }
+  });
+});
+</script>
+
+{% endblock %}

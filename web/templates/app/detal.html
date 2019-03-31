@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="兼职客儿,兼职">
+  <meta name="keywords" content="兼职客儿,兼职">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>兼职客儿</title>
+  <meta name="renderer" content="webkit">
+  <meta name="apple-mobile-web-app-title" content="兼职客儿" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+	<link rel="shortcut icon" href="{{buildStaticUrl('/images/favicon.ico')}}" />
+  <meta name="mobile-web-app-capable" content="yes">
+	<link rel="shortcut icon" href="{{buildStaticUrl('/images/favicon.ico')}}" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-icon-precomposed" href="assets/i/app-icon72x72@2x.png">
+  <meta name="msapplication-TileImage" content="assets/i/app-icon72x72@2x.png">
+  <meta name="msapplication-TileColor" content="#0e90d2">
+  <meta name="applicable-device" content="mobile" />
+  <meta name="location" content="province=四川;city=成都">
+  <meta name="applicable-device" content="pc,mobile">
+    <meta name="MobileOptimized" content="320"/>
+    <meta name="HandheldFriendly" content="true"/>
+
+<link rel="stylesheet" type="text/css" href="{{buildStaticUrl('/app/jqweui/dist/lib/weui.min.css')}}">
+<link rel="stylesheet" type="text/css" href="{{buildStaticUrl('/app/jqweui/dist/css/jquery-weui.css')}}">
+
+<link rel="stylesheet" type="text/css" href="{{buildStaticUrl('/app/sui/dist/css/sm.min.css')}}">
+<link rel="stylesheet" type="text/css" href="{{buildStaticUrl('/app/sui/dist/css/sm-extend.min.css')}}">
+<style>
+
+body,html,*{
+  margin: 0;
+  padding: 0;
+}
+.left{
+  float: left;
+}
+.right{
+  float: right;
+}
+.base-info{
+  width: 100%;
+
+}
+.base-info div{
+display: inline-block;
+padding-right: 35px;
+font-size: .6rem;
+
+
+}
+.card-content-inner ul{
+ margin: .5rem 0;
+
+}
+.card-content-inner li{
+
+  list-style: none;
+  color: #A5A5A5;
+  font-size: .8rem;
+  text-indent: -5em;
+  margin-left: 5em;
+  /*如何处理元素中的空白*/
+  white-space:nowrap;
+  padding:.2rem 0rem;
+  text-overflow:ellipsis;
+
+}
+.card-content-inner li span{
+  padding-left: .4rem;
+  color: #3F3F3F;
+}
+.content-title{
+  color: #404040;;
+  border-left: 3px solid #fe7418;
+  font-size: .75rem;
+  padding-left: .5rem;
+
+}
+.content-detal{
+  margin-top: .5rem;
+  color: #808FAE;
+  line-height: 24px;
+
+}
+.content-detal pre{
+  word-wrap:break-word;
+  /*https://www.cnblogs.com/2050/archive/2012/08/10/2632256.html*/
+  word-break:break-all;
+  /*white-space空格处理*/
+  white-space: pre-wrap;
+  font-size: .7rem;
+}
+/*底部*/
+.footers-body{
+position: absolute;
+bottom: 0;
+background-color: #FCFCFC;
+display: flex;
+width: 100%;
+height: 2.4rem;
+
+}
+.footers-body ul {
+ width: 100%;
+ height: 100%;
+ overflow: hidden;
+}
+.footers-body ul li{
+  list-style: none;
+  display: inline-block;
+}
+.sc{
+  display: block;
+  float: left;
+  width: 30%;
+  height: 100%;
+  text-align: center;
+  line-height: 2.4rem;
+}
+.bm{
+  float: right;
+  width: 70%;
+  height: 100%;
+  background-color: #fc0;
+  color: #404040;
+  text-align: center;
+    line-height: 2.4rem;
+}
+    .locations{
+       width: 50%;
+  height: 50%;
+  overflow: auto;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+    }
+    .locations_detal{
+        text-align: center
+    }
+    .cards{
+        background-color: rgba(255, 255, 255, 0.6);
+        box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.13);
+    }
+</style>
+<body>
+
+<header class="bar bar-nav">
+  <h1 class="title">兼职详情</h1>
+    <!--后面加上锚点返回到具体的位置-->
+  <!--下面这个是返回到上一个页面-->
+ <a href="JavaScript:history.go(-1)"> <span class="icon icon-left"></span></a>
+
+</header>
+<div class="content">
+  
+  <div class="card">
+    <div class="card-header">
+      <!-- 左边 -->
+      <div class="left">
+        <div class="base_title"></div>
+      <div class="base-info">
+      
+          <div class="address"></div>
+          <div class="times"></div>
+          <!--<div class="liu">浏览量redis后面来</div>-->
+      
+      </div>
+      </div>
+      <!-- 右边 -->
+      <div class="right" align="center">
+        <img align="center" src="{{buildStaticUrl('/images/app/hot.png')}}">
+        <div><small class="button-danger">热门推荐</small></div>
+      </div>
+    </div>
+<!--展示标签-->
+    <!-- 详细内容 -->
+    <hr style="border:.1px solid #E1E1E1;">
+    <div class="card-content">
+      <div class="card-content-inner">
+        <ul>
+          <li>薪资待遇:<span style="color: red"><span class="wages"></span><span class="benefits"></span></span></li>
+          <li>兼职类型:<span class="jianzhi_type"></span></li>
+          <li>招聘人数:<span class="need_num"></span></li>
+           <li>结算方式:<span >日结</span></li>
+          <!-- <li>其他要求:<span>无</span></li> -->
+          <li>工作种类:<span>短招</span></li>
+          <li>工作时间:<span class="start_time"></span>至<span class="end_time"></span></li>
+           <li>上班时段:<span >报名后通知</span></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+  <!-- 工作内容 -->
+  <div class="card">
+    <div class="card-content">
+      <div class="card-content-inner">
+        <div class="content-title">工作内容</div>
+        <div class="content-detal"><pre class="detal"></pre></div>
+      </div>
+      
+    </div>
+  </div>
+ 
+ <!-- 其他消息 -->
+  
+  <!--<div class="card">-->
+     <!--<div class="card-content">-->
+      <!--<div class="card-content-inner">-->
+        <!--<ul>-->
+          <!---->
+        <!--</ul>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+
+<!-- 工作地点，发布工作人 -->
+  <div class="card">
+    <div class="card-header">
+      发布人:<span class="people"></span><img align="center" style="width:20px;height:20px;" src="{{buildStaticUrl('/images/app/rz.png')}}">
+    </div>
+      <!--<div class="card-header">-->
+      <!--联系方式:<span class="people_tel"></span>-->
+    <!--</div>-->
+    <hr style="border:.1px solid #E1E1E1;">
+    <div class="card-content">
+      <div class="card-content-inner ">
+         <div id="doc-geo-demo" style="width: 100%; height: 100%;" class="map"><img style="width: 100%; height: 100px;" src="{{buildStaticUrl('/images/app/map.jpg')}}"></div>
+          <div id="locations" class="locations">
+  <div class="cards"><p id="addresstrue" class="locations_detal">点击查看详细位置</p></div>
+          </div>
+
+      </div>
+    </div>
+  </div>
+
+
+<div style="height: 2.4rem;width: 100%;background-color: red;"></div>
+</div>
+<div class="footers-body">
+  <ul>
+    <li class="sc"><a href="javascript:void(0);">收藏</a></li>
+    <li class="bm"><a href="javascript:void(0);">立即报名</a></li>
+  </ul>
+</div>
+
+
+
+<script type='text/javascript' src='http://g.alicdn.com/sj/lib/zepto/zepto.min.js'></script>
+<script src="{{buildStaticUrl('/app/sui/dist/js/sm.min.js')}}"></script>
+<script src="{{buildStaticUrl('/app/sui/dist/js/sui/dist/js/sm-extend.min.js')}}"></script>
+
+<script type="text/javascript" charset="utf-8">
+function GetRequest() {
+    var url = location.search; //获取url中"?"符后的字串
+    var theRequest = new Object();
+    if (url.indexOf("?") != -1) {
+        var str = url.substr(1);
+        strs = str.split("&");
+        for(var i = 0; i < strs.length; i ++) {
+            theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+        }
+    }
+    return theRequest;
+}
+$(document).ready(function(){
+
+var Request = GetRequest();
+var id
+id = Request['id'];
+  $.ajax(
+  	{
+          //          //下拉的时候增加page
+        url:"http://127.0.0.1:5000/api/getdetal/?id="+id,
+     dataType:'json',
+     type:'get',
+     success: function (res) {
+          console.log(res.data);
+        $(".base_title").text(res.data.title)
+         $(".address").text(res.data.addres)
+         $(".times").text(res.data.times)
+         $(".wages").text(res.data.wages)
+         $(".need_num").text(res.data.need_num)
+         $(".benefits").text(res.data.benefits)
+         $(".jianzhi_type").text(res.data.jianzhi_type)
+         $(".detal").text(res.data.contents)
+          $(".start_time").text(res.data.start_time)
+          $(".end_time").text(res.data.end_time)
+          $(".people").text(res.data.people)
+          $(".people_tel").text(res.data.people_tel)
+
+
+  }
+
+
+  	});
+
+
+});
+
+var Request = GetRequest();
+var id
+id = Request['id'];
+$(".sc").click(function() {
+    $.ajax({
+        url: 'http://127.0.0.1:5000/api/getcollect/',
+        data: {
+            pid: id,
+        },
+        async: false,
+        dataType: 'json',
+        type: 'POST',
+        timeout: 10000,
+        success: function (data) {
+            console.log(data)
+            $.toast(data.msg)
+        },
+    })
+
+})
+
+
+$(".bm").click(function() {
+    $.ajax({
+        url: 'http://127.0.0.1:5000/api/getenroll/',
+        data: {
+            pid: id,
+        },
+        async: false,
+        dataType: 'json',
+        type: 'POST',
+        timeout: 10000,
+        success: function (data) {
+            console.log(data)
+            $.toast(data.msg)
+        },
+    })
+
+})
+
+</script>
+
+<script type="text/javascript" charset="utf-8">
+    console.log($(".address").text())
+      document.getElementById("locations").addEventListener("click", function() {
+          // var address = document.getElementsByClassName("address").value;
+          var address=$(".address").text()
+          $.ajax({
+              url: 'http://restapi.amap.com/v3/geocode/geo?key=b7dbf1c5d4bbc12a1c2ffb88cf2dc305',
+              data: {
+                  output: 'json',
+                  address: address,
+              },
+              async: false,
+              dataType: 'json',
+              type: 'POST',
+              timeout: 10000,
+              success: function (data) {
+                  console.log(data)
+                  var location = data.geocodes[0].location;
+                  var tempArr = location.split(",");
+                  var lat = tempArr[0];
+                  var log = tempArr[1];
+                  var locations = log + ',' + lat;
+                  if (data.status == 1) {
+                      window.location='http://3gimg.qq.com/lightmap/v1/wxmarker/index.html?marker=coord:'+locations+';addr:'+address+'&referer=wexinmp_profile'
+                  }
+                  ;
+                  if (data.status == 0) {
+                      $.toast("地理位置解析失败！");
+                  }
+              },
+              error: function () {
+                  $.toast("服务器放假了..");
+              }
+          })
+
+      })
+    </script>
+
+
+
+
+</body>
+</html>

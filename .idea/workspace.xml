@@ -1,0 +1,855 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="586ea4f7-0d1c-40db-9446-83a1fd7af259" name="Default" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/jianzhikeer$jianzhikeer2.coverage" NAME="jianzhikeer2 Coverage Results" MODIFIED="1546407217255" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common/models" />
+    <SUITE FILE_PATH="coverage/jianzhikeer$test.coverage" NAME="test Coverage Results" MODIFIED="1545823673492" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/jobs" />
+    <SUITE FILE_PATH="coverage/jianzhikeer$te.coverage" NAME="te Coverage Results" MODIFIED="1552969776588" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/jianzhikeer$application.coverage" NAME="application Coverage Results" MODIFIED="1551917400996" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/jianzhikeer$jianzhikeer.coverage" NAME="jianzhikeer Coverage Results" MODIFIED="1552969234840" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common/models" />
+    <SUITE FILE_PATH="coverage/jianzhikeer$manage.coverage" NAME="manage Coverage Results" MODIFIED="1551917641345" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/jianzhikeer$auth_code.coverage" NAME="auth_code Coverage Results" MODIFIED="1545458732391" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/common/libs" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/www.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-115" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/manage.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/requirement.txt">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-381" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jianzhikeer2.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-63" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jianzhikeer2s.sql">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/__init__.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wxframework/getwechat/__init__.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wxframework/getwechat/getwechat.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-52">
+              <caret line="13" column="28" lean-forward="true" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/wxframework/__init__.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+        <option value="HTML File" />
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>a</find>
+      <find>href</find>
+      <find>on_confirme</find>
+      <find>JzkIsShop</find>
+      <find>Jzk</find>
+      <find>layer</find>
+      <find>gonggao</find>
+      <find>jz_connection_type</find>
+      <find>jz_other</find>
+      <find>jz_types</find>
+      <find>jz_benefits</find>
+      <find>jz_time_type</find>
+      <find>form</find>
+      <find>barDemo</find>
+      <find>contents</find>
+      <find>checked</find>
+      <find>is_sign</find>
+      <find>on_position</find>
+      <find>signups</find>
+      <find>hide_ul</find>
+      <find>auditing</find>
+      <find>test</find>
+      <find>tables</find>
+      <find>bar_noaudited</find>
+      <find>toolbars</find>
+      <find>bar__Audited</find>
+      <find>weibo_num</find>
+      <find>JzkUser</find>
+      <find>print</find>
+      <find>眉山兼职,学生兼职</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/web/templates/app</dir>
+    </dirStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/payment/__init__.py" />
+        <option value="$PROJECT_DIR$/jobs/__init__.py" />
+        <option value="$PROJECT_DIR$/config/production_setting.py" />
+        <option value="$PROJECT_DIR$/config/local_setting.py" />
+        <option value="$PROJECT_DIR$/config/__init__.py" />
+        <option value="$PROJECT_DIR$/common/libs/api/__init__.py" />
+        <option value="$PROJECT_DIR$/common/libs/user/__init__.py" />
+        <option value="$PROJECT_DIR$/common/libs/user/UserService.py" />
+        <option value="$PROJECT_DIR$/common/libs/__init__.py" />
+        <option value="$PROJECT_DIR$/common/libs/Helper.py" />
+        <option value="$PROJECT_DIR$/common/libs/UrlManager.py" />
+        <option value="$PROJECT_DIR$/common/models/__init__.py" />
+        <option value="$PROJECT_DIR$/common/__init__.py" />
+        <option value="$PROJECT_DIR$/application.py" />
+        <option value="$PROJECT_DIR$/manage.py" />
+        <option value="$PROJECT_DIR$/www.py" />
+        <option value="$PROJECT_DIR$/common/libs/auth_code.py" />
+        <option value="$PROJECT_DIR$/web/controllers/admin/main/Mains.py" />
+        <option value="$PROJECT_DIR$/web/interceptors/Authinterceptor.py" />
+        <option value="$PROJECT_DIR$/web/interceptors/getwx.py" />
+        <option value="$PROJECT_DIR$/common/libs/api/redis_helper.py" />
+        <option value="$PROJECT_DIR$/web/controllers/admin/user/User.py" />
+        <option value="$PROJECT_DIR$/web/controllers/api/api_v1.py" />
+        <option value="$PROJECT_DIR$/web/controllers/app/home/__init__.py" />
+        <option value="$PROJECT_DIR$/web/controllers/app/home/home.py" />
+        <option value="$PROJECT_DIR$/web/controllers/app/me/__init__.py" />
+        <option value="$PROJECT_DIR$/web/controllers/app/me/me.py" />
+        <option value="$PROJECT_DIR$/web/controllers/app/posts/__init__.py" />
+        <option value="$PROJECT_DIR$/web/controllers/app/posts/posts.py" />
+        <option value="$PROJECT_DIR$/web/controllers/app/__init__.py" />
+        <option value="$PROJECT_DIR$/web/controllers/front/__init__.py" />
+        <option value="$PROJECT_DIR$/web/controllers/static.py" />
+        <option value="$PROJECT_DIR$/web/controllers/__init__.py" />
+        <option value="$PROJECT_DIR$/web/static/xadmin.js" />
+        <option value="$PROJECT_DIR$/web/templates/admin/login.html" />
+        <option value="$PROJECT_DIR$/config/base_setting.py" />
+        <option value="$PROJECT_DIR$/web/controllers/admin/jianzhi/jianzhi.py" />
+        <option value="$PROJECT_DIR$/web/templates/admin/index.html" />
+        <option value="$PROJECT_DIR$/web/templates/admin/jianzhi/add_ad.html" />
+        <option value="$PROJECT_DIR$/web/templates/admin/jianzhi/add_messages.html" />
+        <option value="$PROJECT_DIR$/web/templates/admin/jianzhi/jianzhi_base.html" />
+        <option value="$PROJECT_DIR$/web/templates/admin/jianzhi/jianzhi_home.html" />
+        <option value="$PROJECT_DIR$/web/templates/admin/jianzhi/jianzhi_qiuzhi.html" />
+        <option value="$PROJECT_DIR$/web/templates/admin/jianzhi/jianzhi_quanxian.html" />
+        <option value="$PROJECT_DIR$/web/templates/admin/jianzhi/jianzhi_shangjia.html" />
+        <option value="$PROJECT_DIR$/web/templates/admin/jianzhi/jianzhi_shangjiarenzheng.html" />
+        <option value="$PROJECT_DIR$/web/templates/app/app_base.html" />
+        <option value="$PROJECT_DIR$/web/templates/app/detal.html" />
+        <option value="$PROJECT_DIR$/web/templates/app/feedback.html" />
+        <option value="$PROJECT_DIR$/web/templates/app/index.html" />
+        <option value="$PROJECT_DIR$/web/templates/app/others_bases.html" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="806" />
+    <option name="y" value="131" />
+    <option name="width" value="1125" />
+    <option name="height" value="1000" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="jianzhikeer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jianzhikeer" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jianzhikeer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jianzhikeer" type="462c0819:PsiDirectoryNode" />
+              <item name="attachement" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jianzhikeer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jianzhikeer" type="462c0819:PsiDirectoryNode" />
+              <item name="attachement" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jianzhikeer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jianzhikeer" type="462c0819:PsiDirectoryNode" />
+              <item name="attachement" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="avator" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jianzhikeer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jianzhikeer" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jianzhikeer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jianzhikeer" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="libs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jianzhikeer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jianzhikeer" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="libs" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jianzhikeer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jianzhikeer" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="libs" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jianzhikeer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jianzhikeer" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jianzhikeer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jianzhikeer" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jianzhikeer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jianzhikeer" type="462c0819:PsiDirectoryNode" />
+              <item name="jobs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jianzhikeer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jianzhikeer" type="462c0819:PsiDirectoryNode" />
+              <item name="payment" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jianzhikeer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jianzhikeer" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jianzhikeer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jianzhikeer" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jianzhikeer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jianzhikeer" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jianzhikeer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jianzhikeer" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="jianzhi" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jianzhikeer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jianzhikeer" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jianzhikeer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jianzhikeer" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jianzhikeer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jianzhikeer" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jianzhikeer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jianzhikeer" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jianzhikeer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jianzhikeer" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="home" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jianzhikeer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jianzhikeer" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="me" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jianzhikeer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jianzhikeer" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="posts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jianzhikeer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jianzhikeer" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="front" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jianzhikeer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jianzhikeer" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="interceptors" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jianzhikeer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jianzhikeer" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jianzhikeer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jianzhikeer" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jianzhikeer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jianzhikeer" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jianzhikeer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jianzhikeer" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+              <item name="jianzhi" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jianzhikeer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jianzhikeer" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jianzhikeer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jianzhikeer" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="wait" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jianzhikeer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jianzhikeer" type="462c0819:PsiDirectoryNode" />
+              <item name="wxframework" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jianzhikeer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jianzhikeer" type="462c0819:PsiDirectoryNode" />
+              <item name="wxframework" type="462c0819:PsiDirectoryNode" />
+              <item name="getwechat" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="I:\project\jianzhikeer\web\static\wait" />
+      <recent name="I:\project\jianzhikeer\web\static\app" />
+      <recent name="I:\project\jianzhikeer\web\static\images\app" />
+      <recent name="I:\project\jianzhikeer\web\static\admin\css" />
+      <recent name="I:\project\jianzhikeer\web\templates" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\2019以前的project\jianzhikeer\attachement\images\avator" />
+      <recent name="I:\project\jianzhikeer\attachement\images\avator" />
+      <recent name="I:\project\jianzhikeer\web\static\app" />
+      <recent name="I:\project\jianzhikeer\web\templates\admin" />
+      <recent name="I:\project\jianzhikeer\web\templates\app" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="586ea4f7-0d1c-40db-9446-83a1fd7af259" name="Default" comment="" />
+      <created>1544094570062</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1544094570062</updated>
+      <workItem from="1546314489811" duration="1745000" />
+      <workItem from="1546334594953" duration="51363000" />
+      <workItem from="1546513827594" duration="252000" />
+      <workItem from="1546576617956" duration="5722000" />
+      <workItem from="1546667229477" duration="463000" />
+      <workItem from="1546698188985" duration="6501000" />
+      <workItem from="1546755569413" duration="5410000" />
+      <workItem from="1547209721950" duration="16000" />
+      <workItem from="1547259854239" duration="4211000" />
+      <workItem from="1551877533242" duration="7692000" />
+      <workItem from="1551937080384" duration="596000" />
+      <workItem from="1552968413477" duration="4067000" />
+      <workItem from="1552972561107" duration="8000" />
+      <workItem from="1553777453999" duration="5119000" />
+      <workItem from="1553821093929" duration="1302000" />
+      <workItem from="1553838621142" duration="2052000" />
+      <workItem from="1554035774384" duration="753000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="97272000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16554959" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.25783476" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3847242" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3988604" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3281471" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49932975" visible="true" weight="0.3493635" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50067025" side_tool="true" weight="0.42857143" />
+      <window_info anchor="bottom" id="Version Control" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32673267" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" weight="0.32960597" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" weight="0.1860215" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.25783476" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.4412771" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3988604" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32934132" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.25171626" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32814372" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="Database" order="4" weight="0.32960597" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/web/interceptors/Authinterceptor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1175">
+          <caret line="19" column="7" lean-forward="true" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/interceptors/getwx.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-283" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/static/xadmin.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/admin/index_main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-73" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/admin/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1326">
+          <caret line="55" column="56" selection-start-line="55" selection-start-column="56" selection-end-line="55" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/admin/main_base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-73" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/admin/pagenation.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/admin/jianzhi/add_ad.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="41" column="11" selection-start-line="41" selection-start-column="11" selection-end-line="41" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/admin/jianzhi/add_messages.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-986">
+          <caret line="8" column="45" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/admin/jianzhi/jianzhi.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4252">
+          <caret line="237" column="6" lean-forward="true" selection-start-line="237" selection-start-column="6" selection-end-line="237" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/admin/jianzhi/jianzhi_base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1053">
+          <caret line="60" column="44" lean-forward="true" selection-start-line="60" selection-start-column="8" selection-end-line="60" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/admin/jianzhi/jianzhi_groups.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1375">
+          <caret line="14" column="30" lean-forward="true" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/admin/jianzhi/jianzhi_guanliyuan.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1669" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/admin/jianzhi/jianzhi_home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-178">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/admin/jianzhi/jianzhi_message.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1890" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/admin/jianzhi/jianzhi_qiuzhi.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2352">
+          <caret line="65" column="5" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/admin/jianzhi/jianzhi_quanxian.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4053">
+          <caret line="8" column="45" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/admin/jianzhi/jianzhi_shangjia.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1659">
+          <caret line="74" column="5" selection-start-line="74" selection-start-column="5" selection-end-line="74" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/admin/jianzhi/jianzhi_shangjiarenzheng.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2982">
+          <caret line="8" column="45" selection-start-line="8" selection-start-column="45" selection-end-line="8" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/admin/jianzhi/jianzhi_tongjiday.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-346">
+          <caret line="13" column="4" lean-forward="true" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/admin/jianzhi/jianzhi_tongzhi.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1827" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/admin/jianzhi/jianzhi_user_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1449" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/admin/jianzhi/te.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-252" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/admin/jianzhi/jianzhi_userManagement.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-850" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/admin/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="144" selection-start-line="144" selection-end-line="144" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/app/add_shangjia.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4126" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/app/app_base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-399">
+          <caret line="23" column="52" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/app/collection.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2145">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#a#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/app/detal.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2136">
+          <caret line="220" column="15" lean-forward="true" selection-start-line="210" selection-start-column="1" selection-end-line="220" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/app/feedback.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1354">
+          <caret line="23" column="52" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/app/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2203">
+          <caret line="225" column="8" selection-start-line="225" selection-start-column="8" selection-end-line="225" selection-end-column="8" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/app/jianzhi_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2703" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/app/jz_classification.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/app/jweui.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1174" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/app/me.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6331" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/app/modifying_data.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5882" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/app/others_bases.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-241">
+          <caret line="23" column="52" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/app/post.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7374" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/app/te.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/app/post_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2152" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/templates/wait/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-31" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wxframework/getwechat/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wxframework/getwechat/getwechat.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-52">
+          <caret line="13" column="28" lean-forward="true" selection-start-line="13" selection-start-column="28" selection-end-line="13" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/wxframework/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-381" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jianzhikeer2.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-63" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jianzhikeer2s.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirement.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-115" />
+      </provider>
+    </entry>
+  </component>
+</project>

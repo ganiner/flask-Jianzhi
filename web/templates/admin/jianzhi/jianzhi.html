@@ -1,0 +1,479 @@
+{% extends "admin/jianzhi/jianzhi_base.html" %}
+
+
+{% block content %}
+
+
+	 <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+      <ul class="layui-tab-title">
+        <li class="layui-this">已审核</li>
+        <li>未审核</li>
+        <li>添加兼职</li>
+      </ul>
+      <div class="layui-tab-content">
+
+    <div class="layui-tab-item layui-show">
+
+
+        <!--第一个-->
+<table class="layui-hide"  id="tables_Audited" lay-filter="test"></table>
+
+<script type="text/html" id="toolbars_Audited">
+  <div class="layui-btn-container">
+    <button class="layui-btn layui-btn-sm" lay-event="getCheckData">获取选中行数据</button>
+    <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button>
+  </div>
+</script>
+
+<script type="text/html" id="bar__Audited">
+  <!--<a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>-->
+  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+
+    </div>
+
+
+
+<!--第二个-->
+          <div class="layui-tab-item">
+
+
+<table class="layui-hide"  id="tables_unaudited" lay-filter="test"></table>
+
+<script type="text/html" id="toolbars_unaudited">
+  <div class="layui-btn-container">
+    <button class="layui-btn layui-btn-sm" lay-event="getCheckData">获取选中行数据</button>
+    <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button>
+  </div>
+</script>
+
+<script type="text/html" id="bar_noaudited">
+  <a class="layui-btn layui-btn-xs" lay-event="auditing">审核</a>
+  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+
+
+
+
+    </div>
+
+<!--第三个-->
+    <div class="layui-tab-item">
+
+<div class="layui-form" >
+
+
+  <div class="layui-form-item">
+    <label class="layui-form-label">兼职标题</label>
+    <div class="layui-input-block">
+      <input id="jz_titles" type="text" name="title" lay-verify="required"  placeholder="请输入兼职标题" autocomplete="off" class="layui-input">
+    </div>
+  </div>
+
+
+    <div class="layui-form-item">
+    <label class="layui-form-label">兼职类型</label>
+    <div class="layui-input-block">
+      <select id="jz_types" name="jz_types" lay-verify="required">
+        <option value=""></option>
+        <option value="0">派单</option>
+        <option value="1">充场</option>
+        <option value="2">安保</option>
+		<option value="3">促销</option>
+		<option value="4">礼仪</option>
+		<option value="5">模特</option>
+		<option value="6">销售</option>
+		<option value="7">助教</option>
+		<option value="8">文员</option>
+		<option value="9">设计</option>
+		<option value="10">实习</option>
+		<option value="11">服务员</option>
+		<option value="12">打包分拣</option>
+		<option value="13">问卷调查</option>
+		<option value="14">地摊拉访</option>
+		<option value="15">话务客服</option>
+		<option value="16">审核录入</option>
+		<option value="17">其他</option>
+      </select>
+    </div>
+  </div>
+
+
+   <div class="layui-form-item">
+    <label class="layui-form-label">时间类型</label>
+    <div class="layui-input-block">
+      <select id="jz_time_type" name="jz_time_type" lay-verify="required">
+        <option value=""></option>
+        <option value="0">短期兼职</option>
+        <option value="1">长期兼职</option>
+        <option value="2">周末兼职</option>
+		<option value="3">其他兼职</option>
+		<option value="4">实习</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="layui-form-item">
+    <label class="layui-form-label">职位描述</label>
+     <div class="layui-input-block">
+      <textarea id="jz_describe" name="desc" lay-verify="required" placeholder="请输入内容" class="layui-textarea"></textarea>
+    </div>
+  </div>
+
+
+  <div class="layui-form-item">
+    <label class="layui-form-label">招聘人数</label>
+    <div class="layui-input-inline">
+      <input id="jz_people" type="text" name="jz_people"  lay-verify="required|number" placeholder="请输入招聘人数" autocomplete="off" class="layui-input">
+    </div>
+
+
+
+    <label class="layui-form-label">薪资待遇</label>
+        <div class="layui-input-inline">
+        <input id="jz_wages"  type="text" name="jz_wages"  lay-verify="required|number" placeholder="请输入薪资" autocomplete="off" class="layui-input">
+        </div>
+           <div class="layui-input-inline">
+      <select id="jz_benefits" name="jz_benefits" lay-verify="required">
+        <option value="0">元/小时</option>
+        <option value="1">元/天</option>
+       	<option value="2">元/周</option>
+        <option value="3">元/月</option>
+      </select>
+    </div>
+  </div>
+
+     <div class="layui-form-item">
+
+   		<label class="layui-form-label">工作地点</label>
+
+         <div class="layui-input-inline">
+      <input id="jz_address" type="text" name="jz_address"  lay-verify="required" placeholder="请输入工作地点" autocomplete="off" class="layui-input">
+    </div>
+
+
+         <div class="layui-inline">
+        <label class="layui-form-label">工作时间段</label>
+        <div class="layui-input-inline">
+          <input type="text" class="layui-input" lay-verify="required" id="date_input1" placeholder="开始时间" autocomplete="off">
+        </div>
+        <div class="layui-form-mid">-</div>
+        <div class="layui-input-inline">
+          <input id='date_input2' type="text" lay-verify="required"  placeholder="结束时间" autocomplete="off" class="layui-input">
+        </div>
+      </div>
+     </div>
+
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">联系人名</label>
+            <div class="layui-input-inline">
+             <input id="jz_connections" type="text" name="jz_connections" required  lay-verify="required" placeholder="请输入联系人名称" autocomplete="off" class="layui-input">
+            </div>
+
+             <label class="layui-form-label">联系电话</label>
+        <div class="layui-input-inline">
+            <input id="jz_connection_type" type="text" name="jz_connection_type" required  lay-verify="required|phone" placeholder="请输入联系方式" autocomplete="off" class="layui-input" lay-verify="phone">
+        </div>
+        </div>
+
+
+        <div class="layui-form-item">
+        <label class="layui-form-label">置顶功能(付费)</label>
+            <div class="layui-input-inline">
+                <input id="is_zhiding"  type="checkbox" name="" title="置顶" checked>
+            </div>
+        </div>
+
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">其他要求</label>
+            <div class="layui-input-block">
+                 <textarea id="jz_other" name="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+            <button id="submits" class="layui-btn" lay-submit lay-filter="addjianzhi">立即提交</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            </div>
+        </div>
+
+</div>
+
+    </div>
+
+      </div>
+
+
+<!--最后一个div-->
+    </div>
+
+
+{% endblock %}
+
+{% block js %}
+<script>
+//注意：导航 依赖 element 模块，否则无法进行功能性操作
+layui.use('element', function(){
+  var element = layui.element;
+
+});
+</script>
+<script>
+layui.use(['element', 'layer'], function(){
+  var element = layui.element
+  ,layer = layui.layer;
+
+  element.on('tab(docDemoTabBrief)', function(data){
+    // layer.msg('切到到了'+ data.index + '：' + this.innerHTML);
+
+
+  });
+});
+</script>
+<script>
+
+    $("#submits").click(
+        //记得去获取uid就是发帖的人呀
+        function () {
+             var titles=$("#jz_titles").val()
+            var jz_types=$('#jz_types option:selected').text()
+            var jz_time_type=$("#jz_time_type option:selected").text()
+            var jz_describe=$("#jz_describe").val()
+            var jz_people=$("#jz_people").val()
+            var jz_wages=$("#jz_wages").val()
+            var jz_connections=$("#jz_connections").val()
+            var jz_connection_type=$("#jz_connection_type").val()
+            var jz_address=$("#jz_address").val()
+            var date_input1=$("#date_input1").val()
+             var date_input2=$("#date_input2").val()
+             var jz_other=$("#jz_other").val()
+            var jz_benefits=$("#jz_benefits option:selected").text()
+            var is_zhiding=$("#is_zhiding").prop("checked")
+     //      验证
+
+console.log(is_zhiding)
+
+
+
+    var uid={{current_user.uid}}
+
+  $.ajax({
+         url:"http://127.0.0.1:5000/api/app_posts/",
+                type:'POST',
+      async:false,
+                data:{ 'uid':uid,'title':titles,'content':jz_describe,'wages': jz_wages,'benefits':jz_benefits,'need_num':jz_people
+                ,'start_time':date_input1,'end_time':date_input2,'addres':jz_address,'other':jz_other,'jianzhi_type':jz_types,
+                    'jianzhi_time_type':jz_time_type,'people':jz_connections,'people_tel':jz_connection_type,"is_zhiding":is_zhiding},
+                dataType:'json',
+         success(res){
+             layer.alert(res.msg)
+
+         },
+         error: function(res){
+              layer.alert(res.msg)
+            }
+
+
+     })
+        }
+
+    )
+
+
+</script>
+
+<!--已审核-->
+<script>
+    layui.use('table', function(){
+  var table = layui.table;
+  table.render({
+    elem: '#tables_Audited'
+    ,url:'http://127.0.0.1:5000/api/part_time/?is_check=1'
+    ,toolbar: '#toolbars_Audited'
+    ,title: '用户数据表'
+    ,cols: [[
+      {type: 'checkbox', fixed: 'left'}
+      ,{field:'people', title:'联系人', width:120}
+      ,{field:'people_tel', title:'联系人电话', width:120}
+      ,{field:'title', title:'帖子标题', width:120}
+      ,{field:'contents', title:"内容", width:120}
+      ,{field:'wages', title:'薪资',width:120, sort: true}
+      ,{field:'benefits', title:'效益',width:120 }
+      ,{field:'need_num', title:'所需人数', width:120}
+      ,{field:'start_time', title:'开始时间', width:150}
+      ,{field:'end_time', title:'结束时间', width:150}
+      ,{field:'is_top', title:'置顶', width:100}
+      ,{field:'addres', title:'工作地点', width:150}
+      ,{field:'other', title:'其他要求', width:120}
+      ,{field:'jianzhi_type', title:'兼职类型.', width:120}
+      ,{field:'jianzhi_time_type', title:'兼职时间类型', width:120}
+      ,{fixed: 'right', title:'操作', toolbar: '#bar__Audited', width:150}
+    ]]
+    ,page: { //支持传入 laypage 组件的所有参数（某些参数除外，如：jump/elem） - 详见文档
+
+        layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局
+      //,curr: 5 //设定初始在第 5 页
+      ,groups: 5 //只显示 1 个连续页码
+      ,first: false //不显示首页
+      ,last: false //不显示尾页
+    }
+  });
+
+  //头工具栏事件
+  table.on('toolbar_Audited(test)', function(obj){
+    var checkStatus = table.checkStatus(obj.config.id);
+    switch(obj.event){
+      case 'getCheckData':
+        var data = checkStatus.data;
+        layer.alert(JSON.stringify(data));
+      break;
+      case 'getCheckLength':
+        var data = checkStatus.data;
+        layer.msg('选中了：'+ data.length + ' 个');
+      break;
+    };
+  });
+
+  //监听行工具事件
+  table.on('tool(test)', function(obj){
+    var data = obj.data;
+    if(obj.event === 'del'){
+      layer.confirm('真的删除行么', function(index){
+        obj.del();
+        layer.close(index);
+      });
+    }
+    // else if(obj.event === 'edit'){
+    //   layer.prompt({
+    //     formType: 2
+    //     ,value: data.email
+    //   }, function(value, index){
+    //     obj.update({
+    //       email: value
+    //     });
+    //     layer.close(index);
+    //   });
+    // }
+  });
+});
+</script>
+
+<!--未审核-->
+<script>
+    layui.use('table', function(){
+  var table = layui.table;
+  table.render({
+    elem: '#tables_unaudited'
+    ,url:'http://127.0.0.1:5000/api/part_time/?is_check=0'
+    ,toolbar: '#toolbars'
+    ,title: '用户数据表'
+    ,cols: [[
+      {type: 'checkbox', fixed: 'left'}
+      ,{field:'people', title:'联系人', width:120}
+      ,{field:'people_tel', title:'联系人电话', width:120}
+      ,{field:'title', title:'帖子标题', width:120}
+      ,{field:'contents', title:"内容", width:120}
+      ,{field:'wages', title:'薪资',width:120, sort: true}
+      ,{field:'benefits', title:'效益',width:120 }
+      ,{field:'need_num', title:'所需人数', width:120}
+      ,{field:'start_time', title:'开始时间', width:150}
+      ,{field:'end_time', title:'结束时间', width:150}
+      ,{field:'is_top', title:'置顶', width:100}
+      ,{field:'addres', title:'工作地点', width:150}
+      ,{field:'other', title:'其他要求', width:120}
+      ,{field:'jianzhi_type', title:'兼职类型.', width:120}
+      ,{field:'jianzhi_time_type', title:'兼职时间类型', width:120}
+      ,{fixed: 'right', title:'操作', toolbar: '#bar_noaudited', width:150}
+    ]]
+    ,page: { //支持传入 laypage 组件的所有参数（某些参数除外，如：jump/elem） - 详见文档
+
+        layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局
+      //,curr: 5 //设定初始在第 5 页
+      ,groups: 5 //只显示 1 个连续页码
+      ,first: false //不显示首页
+      ,last: false //不显示尾页
+    }
+  });
+
+  //头工具栏事件
+  table.on('toolbars_unaudited(test)', function(obj){
+
+    var checkStatus = table.checkStatus(obj.config.id);
+    switch(obj.event){
+      case 'getCheckData':
+        var data = checkStatus.data;
+        layer.alert(JSON.stringify(data));
+      break;
+      case 'getCheckLength':
+        var data = checkStatus.data;
+        layer.msg('选中了：'+ data.length + ' 个');
+      break;
+    };
+  });
+
+  //监听行工具事件
+  table.on('tool(test)', function(obj){
+    var data = obj.data;
+
+    if(obj.event === 'del'){
+      layer.confirm('真的删除行么', function(index){
+        obj.del();
+        layer.close(index);
+      });
+    } else if(obj.event === 'auditing'){
+        $.ajax({
+             url: "http://127.0.0.1:5000/api/part_time/",
+              type: 'PUT',
+              data: {
+                id:data.id
+              },
+            timeout: 10000,
+              dataType:'json',
+              success: function(res){
+                 layer.msg(res.msg)
+                   setTimeout(function () {
+                      location.reload();
+            }, 2000);
+              }
+          });
+
+    }
+  });
+});
+</script>
+
+
+<!--时间日期-->
+<script>
+layui.use('laydate', function(){
+  var laydate = layui.laydate;
+
+  //执行一个laydate实例
+  laydate.render({
+    elem: '#date_input1' //指定元素
+      ,type:"datetime"
+      ,min:-0
+      ,theme: 'grid'
+  });
+});
+</script>
+<script>
+layui.use('laydate', function(){
+  var laydate = layui.laydate;
+
+  //执行一个laydate实例
+  laydate.render({
+    elem: '#date_input2' //指定元素
+      ,type:"datetime"
+      ,max:365
+      ,theme: 'grid'
+  });
+});
+</script>
+
+{% endblock %}
+
+
+

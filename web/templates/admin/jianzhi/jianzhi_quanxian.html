@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>兼职客儿管理系统</title>
+	<meta name="keywords" content="兼职客儿,兼职">
+	<meta name="description" content="兼职客儿,兼职">
+	<link rel="shortcut icon" href="./favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="static/css/layui.css">
+	<style type="text/css">
+	.left{
+		float: left;
+	}
+	.left img{
+		margin-right:70px;
+	}
+	.right{
+		float: right;
+
+	}
+	.contents{
+		border: 1px solid #c7c7c7;
+		box-shadow: 1px;
+		margin: 0;
+		height: 700px;
+	}
+	.contents-head{
+		height: 40px;
+		line-height: 35px;
+		border-bottom: 1px solid #e7e7eb;
+		padding: 10px 30px;
+		/*border-radius: 10px;*/
+		background-color: #f8f8f8;
+		font-size: 22px;
+	}
+	.content-left{
+		width: 18%;
+
+	}
+	.content-right{
+		float: left;
+		width: 82%;
+	}
+	</style>
+</head>
+
+<body bgcolor="#E7E8EB">
+<div class="layui-main">
+		
+<div class="contents">
+	<div class="contents-head">
+		<span class="left">兼职模块</span>
+		<span class="right">名字</span>
+	</div>
+
+<div class="content-left left">
+    <ul class="layui-nav layui-nav-tree layui-bg-blue" lay-filter="test">
+  <li class="layui-nav-item layui-nav-itemed ">
+    <a href="javascript:;">业务菜单</a>
+    <dl class="layui-nav-child">
+      <dd><a href="jianzhi.html"><i class="layui-icon layui-icon-login-wechat" style="font-size:18px;"></i>兼职管理</a></dd>
+      <dd><a href="qiuzhi.html"><i class="layui-icon layui-icon-login-wechat" style="font-size:18px;"></i>求职管理</a></dd>
+        <dd><a href="shangjia.html"><i class="layui-icon layui-icon-login-wechat" style="font-size:18px;"></i>商家管理</a></dd>
+          <dd><a href="tongzhi.html"><i class="layui-icon layui-icon-login-wechat" style="font-size:18px;"></i>通知管理</a></dd>
+            <dd><a href="guanliyuan.html"><i class="layui-icon layui-icon-login-wechat" style="font-size:18px;"></i>管理员管理</a></dd>
+    </dl>
+  </li>
+  <li class="layui-nav-item">
+    <a href="javascript:;">统计模块</a>
+    <dl class="layui-nav-child">
+
+      <dd><a href=""><i class="layui-icon layui-icon-username" style="font-size:18px;"></i>日统计</a></dd>
+     <dd><a href=""><i class="layui-icon layui-icon-username" style="font-size:18px;"></i>月统计</a></dd>
+    </dl>
+  </li>
+   
+
+  <li class="layui-nav-item"><a href="">系统管理</a></li>
+  
+</ul>
+</div>
+
+
+<div class="content-right">
+
+	 <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+      <ul class="layui-tab-title">
+        <li class="layui-this">权限列表</li>
+       
+
+      </ul>
+    <div class="layui-tab-content">
+
+    <div class="layui-tab-item layui-show">
+      <!-- 后面的公告可以做成轮播的，增加金额 -->
+          <table class="layui-table">
+  <colgroup>
+    <col width="150">
+    <col width="200">
+    <col>
+  </colgroup>
+  <thead>
+    <tr>
+      <th>权限名</th>
+      <th>登记时间</th>
+       <th>操作</th>
+    </tr> 
+  </thead>
+  <tbody>
+    <tr>
+      <td>超级管理员</td>
+      <td>2018年12月14日</td>
+      <td class="td-manage">
+      </a>
+       <a title="编辑" onclick="member_del(this,'del')" href="javascript:;">
+        <i class="layui-icon">&#xe642;</i>
+      </a>
+       <a title="删除" onclick="member_del(this,'del')" href="javascript:;">
+        <i class="layui-icon">&#xe640;</i>
+      </a>
+    </td>
+    </tr>
+
+  </tbody>
+</table>
+    </div>
+    <div class="layui-tab-item">
+
+        <table class="layui-table">
+  <colgroup>
+    <col width="150">
+    <col width="200">
+    <col>
+  </colgroup>
+  <thead>
+    <tr>
+      <th>编号</th>
+      <th>标题</th>
+      <th>链接</th>
+      <th>联系地址</th>
+      <th>操作</th>
+    </tr> 
+  </thead>
+  <tbody>
+    <tr>
+      <td>001</td>
+      <td>共传智博</td>
+      <td><a href="">测试</a></td>
+            <td>四川省眉山市</td>
+      <td class="td-manage">
+
+      <a title="VIP" onclick="member_del(this,'del')" href="javascript:;">
+        <i class="layui-icon">&#xe665;</i>
+      </a>
+       <a title="详情" onclick="member_del(this,'del')" href="javascript:;">
+        <i class="layui-icon">开通vip</i>
+      </a>
+       <a title="编辑" onclick="member_del(this,'del')" href="javascript:;">
+        <i class="layui-icon">&#xe642;</i>
+      </a>
+       <a title="删除" onclick="member_del(this,'del')" href="javascript:;">
+        <i class="layui-icon">&#xe640;</i>
+      </a>
+    </td>
+    </tr>
+     <tr>
+      <td>001</td>
+      <td>共传智博</td>
+      <td><a href="">测试</a></td>
+      <td>四川省眉山市</td>
+      <td class="td-manage">
+
+      <a title="VIP" onclick="member_del(this,'del')" href="javascript:;">
+        <i class="layui-icon">&#xe665;</i>
+      </a>
+       <a title="详情" onclick="member_del(this,'del')" href="javascript:;">
+        <i class="layui-icon">开通vip</i>
+      </a>
+       <a title="编辑" onclick="member_del(this,'del')" href="javascript:;">
+        <i class="layui-icon">&#xe642;</i>
+      </a>
+       <a title="删除" onclick="member_del(this,'del')" href="javascript:;">
+        <i class="layui-icon">&#xe640;</i>
+      </a>
+    </td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+
+
+
+
+      </div>
+    </div>      
+          
+
+
+</div>
+
+<script src="static/layui.js"></script>
+<script>
+//注意：导航 依赖 element 模块，否则无法进行功能性操作
+layui.use('element', function(){
+  var element = layui.element;
+
+});
+</script>
+<script>
+layui.use(['element', 'layer'], function(){
+  var element = layui.element
+  ,layer = layui.layer;
+  
+  element.on('tab(docDemoTabBrief)', function(data){
+    layer.msg('切到到了'+ data.index + '：' + this.innerHTML);
+  });
+});
+</script>
+</body>
+</html>

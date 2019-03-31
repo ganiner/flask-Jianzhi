@@ -1,0 +1,178 @@
+{% extends "admin/main_base.html" %}
+
+{%block css %}
+<style>
+*{padding:0px;margin:0px;}
+.head ul{
+	width: 1280px;
+	margin: 0 auto;
+	/*overflow: hidden;*/
+	height: 60px;
+	
+}
+
+	.left{
+		float: left;		
+	}
+	.left img{
+		margin-right:70px;
+	}
+	.right{
+		float: right;
+		
+	}
+	.main{
+		width: 1240px;
+		margin: 30px auto;
+		position: relative;
+		overflow: hidden;
+		
+	}
+	.contents{
+		border: 1px solid #c7c7c7;
+		/*border-radius: 10px;*/
+		box-shadow: 1px;
+		margin: 0;
+		height: 700px;
+	}
+	.contents-head{
+		height: 40px;
+		line-height: 35px;
+		border-bottom: 1px solid #e7e7eb;
+		padding: 10px 30px;
+		/*border-radius: 10px;*/
+		background-color: #f8f8f8;
+		font-size: 22px;
+	}
+</style>
+
+{% endblock %}
+
+
+{% block content %}
+<body bgcolor="#E7E8EB">
+
+<div class="body">
+	<div class="head layui-bg-blue">
+		<ul class="layui-nav layui-bg-blue" lay-filter="">
+
+			<div class="left">
+				<a href="#"><img src="{{buildStaticUrl('/images/admin/logo.png')}}"></a>
+
+				<li class="layui-nav-item  layui-this">
+					<a href="">平台管理</a>
+					<dl class="layui-nav-child">
+					  <dd><a href="">WEB后台</a></dd>
+					  <dd><a href="">微站后台</a></dd>
+					  <dd><a href="">微信管理</a></dd>
+					</dl>
+				</li>
+
+
+			</div>
+
+			<div class="right">
+				<li class="layui-nav-item"><a href="#"><i class="layui-icon layui-icon-username" style="font-size:18px;color: red;"></i>{{current_user.username}}</a>
+					<dl class="layui-nav-child">
+					  <dd><a href="">我的账号</a></dd>
+
+					  <dd><a href="{{url_for('adminUserRoute.logout')}}">退出登陆</a></dd>
+					</dl>
+				</li>
+			</div>
+
+		</ul>
+	</div>
+
+
+	<div class="main">
+
+	<div class="contents">
+		<div class="contents-head">
+			<span class="left">兼职客儿</span>
+
+		</div>
+
+		<div class="contetnts-left">
+			<ul class="layui-nav layui-nav-tree layui-bg-blue" lay-filter="test">
+
+  <li class="layui-nav-item layui-nav-itemed ">
+    <a href="javascript:;">公众号</a>
+    <dl class="layui-nav-child">
+      <dd><a href="javascript:;"><i class="layui-icon layui-icon-login-wechat" style="font-size:18px;"></i>微信公众号</a></dd>
+      <dd><a href="javascript:;"><i class="layui-icon layui-icon-login-wechat" style="font-size:18px;"></i>公众号模块</a></dd>
+    </dl>
+  </li>
+  <li class="layui-nav-item">
+    <a href="javascript:;">业务模块</a>
+    <dl class="layui-nav-child">
+
+      <dd><a href="{{url_for('jianzhiRoute.index')}}"><i class="layui-icon layui-icon-username" style="font-size:18px;"></i>兼职模块</a></dd>
+
+    </dl>
+  </li>
+  <li class="layui-nav-item">
+    <a href="javascript:;">人员管理</a>
+    <dl class="layui-nav-child">
+      <dd><a href="">用户管理</a></dd>
+      <dd><a href="">管理员管理</a></dd>
+    </dl>
+  </li>
+   <li class="layui-nav-item">
+    <a href="javascript:;">系统管理</a>
+    <dl class="layui-nav-child">
+      <dd><a href="">数据备份</a></dd>
+      <dd><a href="">数据还原</a></dd>
+    </dl>
+  </li>
+
+  <li class="layui-nav-item">
+    <a href="javascript:;">站点管理</a>
+    <dl class="layui-nav-child">
+      <dd><a href="">站点设置</a></dd>
+      <dd><a href="">数据备份</a></dd>
+    </dl>
+  </li>
+
+  <li class="layui-nav-item"><a href="">访问统计</a></li>
+
+</ul>
+		</div>
+
+		<div class="contetnts-contents">
+			
+
+
+
+
+
+		</div>
+	</div>
+	</div>
+
+
+	<div class="footer"></div>
+
+</div>
+
+</body>
+	<script src="{{buildStaticUrl('/admin/layui.js')}}"></script>
+<script>
+//注意：导航 依赖 element 模块，否则无法进行功能性操作
+layui.use('element', function(){
+  var element = layui.element;
+
+});
+</script>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+

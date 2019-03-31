@@ -1,0 +1,638 @@
+{% extends "admin/jianzhi/jianzhi_base.html" %}
+
+{% block content %}
+
+	 <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+      <ul class="layui-tab-title">
+
+        <li class="layui-this">待审核</li>
+          <li>以入住</li>
+          <li>商家会员列表</li>
+            <li>添加商家</li>
+      </ul>
+      <div class="layui-tab-content">
+
+
+        <div class="layui-tab-item layui-show">
+<table class="layui-hide"  id="tables_audit" lay-filter="test"></table>
+
+<script type="text/html" id="toolbars_audit">
+  <div class="layui-btn-container">
+    <button class="layui-btn layui-btn-sm" lay-event="getCheckData">获取选中行数据</button>
+    <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button>
+  </div>
+</script>
+
+<script type="text/html" id="bar_audit">
+  <a class="layui-btn layui-btn-xs" lay-event="edit">确认审核</a>
+  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+
+
+    </div>
+
+
+          <div class="layui-tab-item ">
+
+              <table class="layui-hide"  id="tables_audited" lay-filter="test"></table>
+
+<script type="text/html" id="toolbars_audited">
+  <div class="layui-btn-container">
+    <button class="layui-btn layui-btn-sm" lay-event="getCheckData">获取选中行数据</button>
+    <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button>
+  </div>
+</script>
+
+<script type="text/html" id="bar_audited">
+  <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+
+
+    </div>
+
+
+        <div class="layui-tab-item">
+
+        <table class="layui-hide"  id="tables_vip" lay-filter="test"></table>
+
+<script type="text/html" id="toolbars_vip">
+  <div class="layui-btn-container">
+    <button class="layui-btn layui-btn-sm" lay-event="getCheckData">获取选中行数据</button>
+    <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button>
+  </div>
+</script>
+
+<script type="text/html" id="bar_vip">
+  <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+
+
+
+    </div>
+
+
+          <div class="layui-tab-item">
+
+            <div class="layui-form" >
+
+                    <div class="layui-form-item">
+                    <label class="layui-form-label">店名</label>
+                    <div class="layui-input-inline">
+                      <input id="jz_shop_name" type="text" name="title" required  lay-verify="required" placeholder="请输入店名" autocomplete="off" class="layui-input">
+                    </div>
+
+                        <label class="layui-form-label">商店地址</label>
+                     <div class="layui-input-inline" style="width: 300px">
+                      <input id="jz_shop_address" name="desc" placeholder="请输入商店地址" autocomplete="off" class="layui-input">
+                    </div>
+                    </div>
+
+
+                    <div class="layui-form-item">
+                    <label class="layui-form-label">商店介绍</label>
+                    <div class="layui-input-block">
+                         <textarea id="jz_shop_detal" name="desc" placeholder="请输入内容" class="layui-textarea"></textarea>
+
+                    </div>
+                    </div>
+
+                    <div class="layui-form-item">
+
+                        <label class="layui-form-label">联系人姓名</label>
+
+                         <div class="layui-input-inline">
+                      <input id="jz_shop_people" type="text" name="jz_address" required  lay-verify="required" placeholder="请输入联系人姓名" autocomplete="off" class="layui-input">
+                    </div>
+                         <label class="layui-form-label">联系电话</label>
+                            <div class="layui-input-inline">
+                             <input id="jz_shop_tel" type="text" name="jz_connections" required  lay-verify="required" placeholder="请输入联系电话" autocomplete="off" class="layui-input">
+                            </div>
+                     </div>
+
+
+
+                    <div class="layui-form-item">
+
+                        <label class="layui-form-label">经营许可证使用照片</label>
+                        <div class="layui-input-inline">
+                            <input id="jz_shop_lincese" type="text" name="jz_shop_lincese" required  lay-verify="required" placeholder="请输入经营许可证使用照片" autocomplete="off" class="layui-input">
+                        </div>
+                       </div>
+
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">开通vip(付费)</label>
+                            <div class="layui-input-inline">
+                                <input id="jz_shop_vip"  type="checkbox" name="" title="置顶" >
+                            </div>
+                        </div>
+
+                    <div class="layui-form-item">
+                            <div class="layui-input-block">
+                            <button id="submits" class="layui-btn" lay-submit lay-filter="addjianzhi">立即提交</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                            </div>
+                        </div>
+
+            </div>
+
+          </div>
+
+      </div>
+
+
+
+      </div>
+
+          
+
+
+{% endblock %}
+
+{% block js %}
+<script>
+//注意：导航 依赖 element 模块，否则无法进行功能性操作
+layui.use('element', function(){
+  var element = layui.element;
+
+});
+</script>
+<script>
+layui.use(['element', 'layer'], function(){
+  var element = layui.element
+  ,layer = layui.layer;
+  
+  element.on('tab(docDemoTabBrief)', function(data){
+    // layer.msg('切到到了'+ data.index + '：' + this.innerHTML);
+    if (data.index==0){
+            layui.use('table', function(){
+  var table = layui.table;
+  table.render({
+    elem: '#tables_audit'
+    ,url:'http://127.0.0.1:5000/api/business/?is_check=0'
+    ,toolbar: '#toolbars_audit'
+    ,title: '未审核数据表'
+    ,cols: [[
+      {type: 'checkbox', fixed: 'left'}
+      ,{field:'uid', title:'开户id以后换成名字', width:120}
+      ,{field:'name', title:'店名', width:120}
+      ,{field:'address', title:'店名地址', width:120}
+      ,{field:'detail', title:"详细介绍", width:120}
+      ,{field:'people_name', title:'联系人名',width:120, sort: true}
+      ,{field:'people_tel', title:'联系电话',width:120 }
+      ,{field:'lincese', title:'许可证', width:120}
+      ,{field:'grade', title:'信用', width:150}
+      ,{field:'is_vip', title:'是否vip', width:150}
+      // ,{field:'is_check', title:'审核', width:100}
+      ,{fixed: 'right', title:'操作', toolbar: '#bar_audit', width:150}
+    ]]
+    ,page: { //支持传入 laypage 组件的所有参数（某些参数除外，如：jump/elem） - 详见文档
+
+        layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局
+      //,curr: 5 //设定初始在第 5 页
+      ,groups: 5 //只显示 1 个连续页码
+      ,first: false //不显示首页
+      ,last: false //不显示尾页
+    }
+  });
+
+  //头工具栏事件
+  table.on('toolbar_Audited(test)', function(obj){
+    var checkStatus = table.checkStatus(obj.config.id);
+    switch(obj.event){
+      case 'getCheckData':
+        var data = checkStatus.data;
+        layer.alert(JSON.stringify(data));
+      break;
+      case 'getCheckLength':
+        var data = checkStatus.data;
+        layer.msg('选中了：'+ data.length + ' 个');
+      break;
+    };
+  });
+
+  //监听行工具事件
+  table.on('tool(test)', function(obj){
+    var data = obj.data;
+    //console.log(obj)
+    if(obj.event === 'del'){
+      layer.confirm('真的删除行么', function(index){
+        obj.del();
+        layer.close(index);
+      });
+    } else if(obj.event === 'edit'){
+      layer.prompt({
+        formType: 2
+        ,value: data.email
+      }, function(value, index){
+        obj.update({
+          email: value
+        });
+        layer.close(index);
+      });
+    }
+  });
+});
+    } else if (data.index==1){
+          layui.use('table', function(){
+  var table = layui.table;
+  table.render({
+    elem: '#tables_audited'
+    ,url:'http://127.0.0.1:5000/api/business/?is_check=1'
+    ,toolbar: '#toolbars_audited'
+    ,title: '已入住商家数据表'
+    ,cols: [[
+      {type: 'checkbox', fixed: 'left'}
+      ,{field:'uid', title:'开户id以后换成名字', width:120}
+      ,{field:'name', title:'店名', width:120}
+      ,{field:'address', title:'店名地址', width:120}
+      ,{field:'detail', title:"详细介绍", width:120}
+      ,{field:'people_name', title:'联系人名',width:120, sort: true}
+      ,{field:'people_tel', title:'联系电话',width:120 }
+      ,{field:'lincese', title:'许可证', width:120}
+      ,{field:'grade', title:'信用', width:150}
+      ,{field:'is_vip', title:'是否vip', width:150}
+      // ,{field:'is_check', title:'审核', width:100}
+      ,{fixed: 'right', title:'操作', toolbar: '#bar_audited', width:150}
+    ]]
+    ,page: { //支持传入 laypage 组件的所有参数（某些参数除外，如：jump/elem） - 详见文档
+
+        layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局
+      //,curr: 5 //设定初始在第 5 页
+      ,groups: 5 //只显示 1 个连续页码
+      ,first: false //不显示首页
+      ,last: false //不显示尾页
+    }
+  });
+
+  //头工具栏事件
+  table.on('toolbar_Audited(test)', function(obj){
+    var checkStatus = table.checkStatus(obj.config.id);
+    switch(obj.event){
+      case 'getCheckData':
+        var data = checkStatus.data;
+        layer.alert(JSON.stringify(data));
+      break;
+      case 'getCheckLength':
+        var data = checkStatus.data;
+        layer.msg('选中了：'+ data.length + ' 个');
+      break;
+    };
+  });
+
+  //监听行工具事件
+  table.on('tool(test)', function(obj){
+    var data = obj.data;
+    //console.log(obj)
+    if(obj.event === 'del'){
+      layer.confirm('真的删除行么', function(index){
+        obj.del();
+        layer.close(index);
+      });
+    } else if(obj.event === 'edit'){
+      layer.prompt({
+        formType: 2
+        ,value: data.email
+      }, function(value, index){
+        obj.update({
+          email: value
+        });
+        layer.close(index);
+      });
+    }
+  });
+});
+    } else if (data.index==2){
+           layui.use('table', function(){
+  var table = layui.table;
+  table.render({
+    elem: '#tables_vip'
+    ,url:'http://127.0.0.1:5000/api/business/?is_vip=1'
+    ,toolbar: '#toolbars_vip'
+    ,title: '商家会员数据表'
+    ,cols: [[
+      {type: 'checkbox', fixed: 'left'}
+      ,{field:'uid', title:'开户id以后换成名字', width:120}
+      ,{field:'name', title:'店名', width:120}
+      ,{field:'address', title:'店名地址', width:120}
+      ,{field:'detail', title:"详细介绍", width:120}
+      ,{field:'people_name', title:'联系人名',width:120, sort: true}
+      ,{field:'people_tel', title:'联系电话',width:120 }
+      ,{field:'lincese', title:'许可证', width:120}
+      ,{field:'grade', title:'信用', width:150}
+      ,{field:'is_vip', title:'是否vip', width:150}
+      ,{field:'is_check', title:'审核', width:100}
+      ,{fixed: 'right', title:'操作', toolbar: '#bar_vip', width:150}
+    ]]
+    ,page: { //支持传入 laypage 组件的所有参数（某些参数除外，如：jump/elem） - 详见文档
+
+        layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局
+      //,curr: 5 //设定初始在第 5 页
+      ,groups: 5 //只显示 1 个连续页码
+      ,first: false //不显示首页
+      ,last: false //不显示尾页
+    }
+  });
+
+  //头工具栏事件
+  table.on('toolbar_Audited(test)', function(obj){
+    var checkStatus = table.checkStatus(obj.config.id);
+    switch(obj.event){
+      case 'getCheckData':
+        var data = checkStatus.data;
+        layer.alert(JSON.stringify(data));
+      break;
+      case 'getCheckLength':
+        var data = checkStatus.data;
+        layer.msg('选中了：'+ data.length + ' 个');
+      break;
+    };
+  });
+
+  //监听行工具事件
+  table.on('tool(test)', function(obj){
+    var data = obj.data;
+    //console.log(obj)
+    if(obj.event === 'del'){
+      layer.confirm('真的删除行么', function(index){
+        obj.del();
+        layer.close(index);
+      });
+    } else if(obj.event === 'edit'){
+      layer.prompt({
+        formType: 2
+        ,value: data.email
+      }, function(value, index){
+        obj.update({
+          email: value
+        });
+        layer.close(index);
+      });
+    }
+  });
+});
+    }
+  });
+});
+</script>
+
+
+<!--未审核-->
+<script>
+    layui.use('table', function(){
+  var table = layui.table;
+  table.render({
+    elem: '#tables_audit'
+    ,url:'http://127.0.0.1:5000/api/business/?is_check=0'
+    ,toolbar: '#toolbars_audit'
+    ,title: '未审核数据表'
+    ,cols: [[
+      {type: 'checkbox', fixed: 'left'}
+      ,{field:'uid', title:'开户id以后换成名字', width:120}
+      ,{field:'name', title:'店名', width:120}
+      ,{field:'address', title:'店名地址', width:120}
+      ,{field:'detail', title:"详细介绍", width:120}
+      ,{field:'people_name', title:'联系人名',width:120, sort: true}
+      ,{field:'people_tel', title:'联系电话',width:120 }
+      ,{field:'lincese', title:'许可证', width:120}
+      ,{field:'grade', title:'信用', width:150}
+      ,{field:'is_vip', title:'是否vip', width:150}
+      // ,{field:'is_check', title:'审核', width:100}
+      ,{fixed: 'right', title:'操作', toolbar: '#bar_audit', width:150}
+    ]]
+    ,page: { //支持传入 laypage 组件的所有参数（某些参数除外，如：jump/elem） - 详见文档
+
+        layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局
+      //,curr: 5 //设定初始在第 5 页
+      ,groups: 5 //只显示 1 个连续页码
+      ,first: false //不显示首页
+      ,last: false //不显示尾页
+    }
+  });
+
+  //头工具栏事件
+  table.on('toolbar_Audited(test)', function(obj){
+    var checkStatus = table.checkStatus(obj.config.id);
+    switch(obj.event){
+      case 'getCheckData':
+        var data = checkStatus.data;
+        layer.alert(JSON.stringify(data));
+      break;
+      case 'getCheckLength':
+        var data = checkStatus.data;
+        layer.msg('选中了：'+ data.length + ' 个');
+      break;
+    };
+  });
+
+  //监听行工具事件
+  table.on('tool(test)', function(obj){
+    var data = obj.data;
+    //console.log(obj)
+    if(obj.event === 'del'){
+      layer.confirm('真的删除行么', function(index){
+        obj.del();
+        layer.close(index);
+      });
+    } else if(obj.event === 'edit'){
+      layer.prompt({
+        formType: 2
+        ,value: data.email
+      }, function(value, index){
+        obj.update({
+          email: value
+        });
+        layer.close(index);
+      });
+    }
+  });
+});
+</script>
+
+<!--已入住-->
+<script>
+    layui.use('table', function(){
+  var table = layui.table;
+  table.render({
+    elem: '#tables_audited'
+    ,url:'http://127.0.0.1:5000/api/business/?is_check=1'
+    ,toolbar: '#toolbars_audited'
+    ,title: '已入住商家数据表'
+    ,cols: [[
+      {type: 'checkbox', fixed: 'left'}
+      ,{field:'uid', title:'开户id以后换成名字', width:120}
+      ,{field:'name', title:'店名', width:120}
+      ,{field:'address', title:'店名地址', width:120}
+      ,{field:'detail', title:"详细介绍", width:120}
+      ,{field:'people_name', title:'联系人名',width:120, sort: true}
+      ,{field:'people_tel', title:'联系电话',width:120 }
+      ,{field:'lincese', title:'许可证', width:120}
+      ,{field:'grade', title:'信用', width:150}
+      ,{field:'is_vip', title:'是否vip', width:150}
+      // ,{field:'is_check', title:'审核', width:100}
+      ,{fixed: 'right', title:'操作', toolbar: '#bar_audited', width:150}
+    ]]
+    ,page: { //支持传入 laypage 组件的所有参数（某些参数除外，如：jump/elem） - 详见文档
+
+        layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局
+      //,curr: 5 //设定初始在第 5 页
+      ,groups: 5 //只显示 1 个连续页码
+      ,first: false //不显示首页
+      ,last: false //不显示尾页
+    }
+  });
+
+  //头工具栏事件
+  table.on('toolbar_Audited(test)', function(obj){
+    var checkStatus = table.checkStatus(obj.config.id);
+    switch(obj.event){
+      case 'getCheckData':
+        var data = checkStatus.data;
+        layer.alert(JSON.stringify(data));
+      break;
+      case 'getCheckLength':
+        var data = checkStatus.data;
+        layer.msg('选中了：'+ data.length + ' 个');
+      break;
+    };
+  });
+
+  //监听行工具事件
+  table.on('tool(test)', function(obj){
+    var data = obj.data;
+    //console.log(obj)
+    if(obj.event === 'del'){
+      layer.confirm('真的删除行么', function(index){
+        obj.del();
+        layer.close(index);
+      });
+    } else if(obj.event === 'edit'){
+      layer.prompt({
+        formType: 2
+        ,value: data.email
+      }, function(value, index){
+        obj.update({
+          email: value
+        });
+        layer.close(index);
+      });
+    }
+  });
+});
+</script>
+
+<!--商家会员列表-->
+<script>
+    layui.use('table', function(){
+  var table = layui.table;
+  table.render({
+    elem: '#tables_vip'
+    ,url:'http://127.0.0.1:5000/api/business/?is_vip=1'
+    ,toolbar: '#toolbars_vip'
+    ,title: '商家会员数据表'
+    ,cols: [[
+      {type: 'checkbox', fixed: 'left'}
+      ,{field:'uid', title:'开户id以后换成名字', width:120}
+      ,{field:'name', title:'店名', width:120}
+      ,{field:'address', title:'店名地址', width:120}
+      ,{field:'detail', title:"详细介绍", width:120}
+      ,{field:'people_name', title:'联系人名',width:120, sort: true}
+      ,{field:'people_tel', title:'联系电话',width:120 }
+      ,{field:'lincese', title:'许可证', width:120}
+      ,{field:'grade', title:'信用', width:150}
+      ,{field:'is_vip', title:'是否vip', width:150}
+      ,{field:'is_check', title:'审核', width:100}
+      ,{fixed: 'right', title:'操作', toolbar: '#bar_vip', width:150}
+    ]]
+    ,page: { //支持传入 laypage 组件的所有参数（某些参数除外，如：jump/elem） - 详见文档
+
+        layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'] //自定义分页布局
+      //,curr: 5 //设定初始在第 5 页
+      ,groups: 5 //只显示 1 个连续页码
+      ,first: false //不显示首页
+      ,last: false //不显示尾页
+    }
+  });
+
+  //头工具栏事件
+  table.on('toolbar_Audited(test)', function(obj){
+    var checkStatus = table.checkStatus(obj.config.id);
+    switch(obj.event){
+      case 'getCheckData':
+        var data = checkStatus.data;
+        layer.alert(JSON.stringify(data));
+      break;
+      case 'getCheckLength':
+        var data = checkStatus.data;
+        layer.msg('选中了：'+ data.length + ' 个');
+      break;
+    };
+  });
+
+  //监听行工具事件
+  table.on('tool(test)', function(obj){
+    var data = obj.data;
+    //console.log(obj)
+    if(obj.event === 'del'){
+      layer.confirm('真的删除行么', function(index){
+        obj.del();
+        layer.close(index);
+      });
+    } else if(obj.event === 'edit'){
+      layer.prompt({
+        formType: 2
+        ,value: data.email
+      }, function(value, index){
+        obj.update({
+          email: value
+        });
+        layer.close(index);
+      });
+    }
+  });
+});
+</script>
+
+<!--添加店家-->
+<script>
+
+    $("#submits").click(
+        //记得去获取uid就是发帖的人呀
+        function () {
+             var jz_shop_name=$("#jz_shop_name").val()
+            var jz_shop_address=$("#jz_shop_address").val()
+            var jz_shop_detal=$("#jz_shop_detal").val()
+            var jz_shop_people=$("#jz_shop_people").val()
+            var jz_shop_tel=$("#jz_shop_tel").val()
+            var jz_shop_lincese=$("#jz_shop_lincese").val()
+            var jz_shop_vip=$("#jz_shop_vip").val()
+
+     //      后面要写验证哦
+
+    var uid={{current_user.uid}}
+         $.ajax({
+         url:"http://127.0.0.1:5000/api/business/",
+                type:'POST',
+                data:{ 'jz_shop_name':jz_shop_name,'jz_shop_address':jz_shop_address,
+                'jz_shop_detal':jz_shop_detal,'jz_shop_people':jz_shop_people,
+                    'jz_shop_tel':jz_shop_tel,'jz_shop_lincese':jz_shop_lincese},
+                dataType:'json',
+         success(res){
+            layer.alert(res.msg)
+         },
+         error: function(res){
+                layer.alert(res.msg)
+            }
+
+
+     })
+        }
+    )
+
+
+</script>
+
+
+
+{% endblock %}

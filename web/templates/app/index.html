@@ -1,0 +1,353 @@
+{% extends "app/app_base.html" %}
+
+{%block css %}
+
+<style>
+body,html{
+	background-color: #EEEEEE;
+	height: 100%;
+	position: relative;
+
+}
+	.header{
+		width: 100%;
+		position: relative;
+		left: 0;
+		top: 0;
+		z-index: 999;
+		background-color: #efeff4;
+
+	}
+	.header img{
+		float: left;
+		margin: 6px 10px;
+		height: 32px;
+	}
+	.city{
+		float: left;
+		position: relative;
+		line-height: 44px;
+	}
+	.swiper-slide img{
+		width: 100%;
+		height: 150px;
+	}
+	/*公告*/
+	.notice{
+		margin: 3px;
+		border-radius: 5px;
+		/*border:1px solid #000;*/
+		background-color: #fff;
+		box-shadow: 1px 1px 1px 1px #BFBFBF;
+		padding: 10px;
+
+	}
+	.notice-message{
+		border-bottom: 1px solid #BEBEBE;
+overflow: hidden;white-space:nowrap;text-overflow:ellipsis;
+		
+	}
+	.weui-flex img{
+		width: 36px;
+		height: 36px;
+	}
+	.weui-flex li{
+		list-style: none;
+		margin: 0px auto;
+	}
+
+    .jian_content_list{
+        border-bottom: 1px solid #f8f7f7;
+        position: relative;
+        list-style-type: none;
+    }
+
+    .jian_content_list a img{
+        display: block;
+        width: 2rem;
+        height: 2rem;
+        position: absolute;
+        top: 20%;
+        left: .5rem;
+    }
+    .conlist{
+        margin-left: 20%;
+        clear: both;
+    }
+    .tit{
+        font-size: .8rem;
+        color: #333;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 82%;
+        font-weight: 400;
+        padding: 0;
+        margin: .2rem 0;
+    }
+    .money_dw{
+         color: #fe7418;;
+        float: right;
+        margin: .4rem 0;
+    }
+
+    .times{
+
+        color: #c9c9c9;
+        float: left;
+    }
+    .addres{
+        color: #c9c9c9;
+        margin-right: .2rem;
+        float: right;
+    }
+</style>
+
+{% endblock %}
+
+ {% block content %}
+
+<!-- 头部 -->
+
+<header class="header">
+	<a href="#"><img src="{{buildStaticUrl('/images/app/logo.png')}}"></a>
+	<a href="#" class="city">成都</a>
+	<div class="weui-search-bar " id="searchBar">
+		<form class="weui-search-bar__form">
+			<div class="weui-search-bar__box">
+				<i class="weui-icon-search"></i>
+				<input type="search" class="weui-search-bar__input" id="searchInput" placeholder="搜索" required="">
+				<a href="javascript:" class="weui-icon-clear" id="searchClear"></a>
+			</div>
+
+			<label class="weui-search-bar__label" id="searchText">
+			<i class="weui-icon-search"></i>
+			<span>搜索</span>
+			</label>
+		</form>
+		<a href="javascript:" class="weui-search-bar__cancel-btn" id="searchCancel">取消</a>
+	</div>
+
+
+</header>
+ <!--主要内容 -->
+
+<div class="weui-tab" style="position: absolute;bottom: 0px;width: 100%;">
+	<div class="weui-tab__bd" style="padding:44px 0px;">
+		<div id="tab1" class="weui-tab__bd-item weui-tab__bd-item--active">
+			<div class="swiper-container" data-space-between='10' data-pagination='.swiper-pagination' data-autoplay="1000">
+					 <div class="swiper-wrapper">
+			<div class="swiper-slide"><img src="{{buildStaticUrl('/images/app/banner.png')}}" alt=""></div>
+			<div class="swiper-slide"><img src="{{buildStaticUrl('/images/app/banner1.jpg')}}" alt=""></div>
+			<div class="swiper-slide"><img src="{{buildStaticUrl('/images/app/banner2.png')}}" alt=""></div>
+			</div>
+			</div>
+			<!-- 公告 -->
+			<div class="notice">
+			<div class="notice-message" onclick="messages()"><a href="javascript:void(0);" style="color: red;">公告:<label class="gonggao" style="color: #0C0C0C;padding-left:.5rem;"></label></a></div>
+			<div class="weui-flex" style="padding:10px 0px;">
+
+			  <li><a href=""><img src="{{buildStaticUrl('/images/app/i1.png')}}"><div>兼职</div></a></li>
+			  <li><a href=""><img src="{{buildStaticUrl('/images/app/i2.png')}}"><div>实习</div></a></li>
+			  <li><a href=""><img src="{{buildStaticUrl('/images/app/i4.png')}}"><div>寒暑假</div></a></li>
+
+			</div>
+			</div>
+			<!-- 工作列表 -->
+			<div class="notice xl">
+			<div style="display:none" class="hide_ul"></div>
+			<!--<ul class="jian_content_list">-->
+			<!--<li>-->
+			<!--<a href="" style="display: block;">-->
+			 <!--<img src="{{buildStaticUrl('/images/app/i1.png')}}">-->
+			   <!--<div class="conlist">-->
+				   <!--<h2 class="tit"></h2>-->
+			 <!--<p class="money_dw"><span class="money"></span><span class="dw"></span></p>-->
+			   <!--<div style="overflow:hidden;clear:both">-->
+				   <!--<div class="times"><span class="start_time"></span><span class="end_time"></span></div>-->
+			   <!--<div class="addres"></div>-->
+			   <!--</div>-->
+			   <!--</div>-->
+			<!--</a>-->
+			<!--</li>-->
+			<!--</ul>-->
+
+
+
+			</div>
+			<div class="weui-loadmore" id="loading" style="display: none">
+				<i class="weui-loading"></i>
+				<span class="weui-loadmore__tips">正在加载</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}
+
+ {% block js %}
+
+<script src="{{buildStaticUrl('/app/jqweui/dist/js/jquery-weui.js')}}"></script>
+<script src="{{buildStaticUrl('/app/jqweui/dist/lib/jquery-2.1.4.js')}}"></script>
+<script src="{{buildStaticUrl('/app/jqweui/dist/js/swiper.js')}}"></script>
+<script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery-weui/1.2.1/js/jquery-weui.min.js"></script>
+
+<script type='text/javascript' src='http://g.alicdn.com/sj/lib/zepto/zepto.min.js'></script>
+<script src="{{buildStaticUrl('/app/sui/dist/js/sm.min.js')}}"></script>
+<script src="{{buildStaticUrl('/app/sui/dist/js/sui/dist/js/sm-extend.min.js')}}"></script>
+
+<script src="https://cdn.bootcss.com/jquery-weui/1.2.1/js/swiper.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery-weui/1.2.1/js/city-picker.min.js"></script>
+
+<!--js这里后面简化下-->
+
+<script>
+      $(".swiper-container").swiper({
+        loop: true,
+        autoplay: 1000
+      });
+
+</script>
+
+
+<script>
+
+$(document).ready(function(){
+  $.ajax(
+  	{
+          //          //下拉的时候增加page
+  		url:"http://127.0.0.1:5000/api/part_time/?is_check=1&page=1&limit=47",
+     dataType:'json',
+     type:'get',
+     success: function (res) {
+          console.log(res.data)
+          for (var i =0;i<res.data.length;i++){
+
+
+			   $(".hide_ul").after("<ul class='jian_content_list'><li>\<" +
+				"a href="+'http://127.0.0.1:5000/app/apphome/detal/?id='+res.data[i].id+" style='display: block;'><img src='{{buildStaticUrl("/images/app/i1.png")}}'>\<" +
+			  "div class='conlist'><h2 class='tit'>"+res.data[i].title+"</h2>\<" +
+			  "p class='money_dw'><span class='money'>"+res.data[i].wages+"</span><span class='dw'>"+res.data[i].benefits+"</span>\<" +
+			  "/p><div style='overflow:hidden;clear:both'><div class='times'><span class='start_time'>"+res.data[i].start_time+"</span></span></div>\<" +
+			  "div class='addres'>"+res.data[i].addres+"</div></div></div></a></li></ul>")
+
+          }
+  }
+
+
+  	});
+
+
+});
+	
+</script>
+
+
+<!--原生下拉加载-->
+<!--<script>-->
+	<!--function getScrollTop() {-->
+    <!--var scrollTop = 0;-->
+    <!--if(document.documentElement && document.documentElement.scrollTop) {-->
+        <!--scrollTop = document.documentElement.scrollTop;-->
+    <!--} else if(document.body) {-->
+        <!--scrollTop = document.body.scrollTop;-->
+    <!--}-->
+    <!--return scrollTop;-->
+<!--}-->
+
+
+<!--function getClientHeight() {-->
+    <!--var clientHeight = 0;-->
+    <!--if(document.body.clientHeight && document.documentElement.clientHeight) {-->
+        <!--clientHeight = Math.min(document.body.clientHeight, document.documentElement.clientHeight);-->
+    <!--} else {-->
+        <!--clientHeight = Math.max(document.body.clientHeight, document.documentElement.clientHeight);-->
+    <!--}-->
+    <!--return clientHeight;-->
+<!--}-->
+
+<!--function getScrollHeight() {-->
+    <!--return Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);-->
+<!--}-->
+
+<!--window.onscroll = function() {-->
+    <!--if(getScrollTop() + getClientHeight() == getScrollHeight()) {-->
+        <!--console.log('下拉刷新了')-->
+    <!--}-->
+<!--}-->
+
+
+
+
+<!--console.log(getScrollTop())-->
+	<!--console.log(getClientHeight())-->
+		<!--console.log(getScrollHeight())-->
+<!--</script>-->
+
+<script>
+	var title=""
+		var content=""
+	$(document).ready(function(){
+
+  $.ajax(
+  	{
+  		url:"http://127.0.0.1:5000/api/inform/?page=1&limit=10",
+     dataType:'json',
+     type:'get',
+     success: function (res) {
+		 content=res.data[0].content
+          $(".gonggao").text(content)
+  		}
+  	});
+
+});
+function messages() {
+		$.alert(content,'详情');
+    }
+
+</script>
+
+<script type="text/javascript">
+	var loading = false;  //状态标记
+$(".weui-tab").infinite().on("infinite", function() {
+  if(loading) return;
+  loading = true;
+  setTimeout(function() {
+    // $("#list").append("<p> 我是新加载的内容 </p>");
+    console.log("aaaa")
+    loading = false;
+  }, 1500);   //模拟延迟
+});
+
+
+</script>
+
+{% endblock %}
+
+
+<!--function() {
+  if(loading) return;
+  loading = true;
+  setTimeout(function() {
+    $("#list").append("<p> 我是新加载的内容 </p>");
+    loading = false;
+  }, 1500);   //模拟延迟
+}-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

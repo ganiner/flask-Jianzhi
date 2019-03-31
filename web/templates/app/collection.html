@@ -1,0 +1,116 @@
+{% extends "app/others_bases.html" %}
+
+{%block css %}
+<link rel="stylesheet" type="text/css" href="{{buildStaticUrl('/app/jqweui/dist/lib/weui.min.css')}}">
+<link rel="stylesheet" type="text/css" href="{{buildStaticUrl('/app/jqweui/dist/css/jquery-weui.css')}}">
+
+    <style>
+        .bar{
+            position: absolute;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            height: 2.2rem;
+            padding: 0 .5rem;
+            background-color: #f7f7f8;
+            backface-visibility: hidden;
+        }
+
+        .title{
+            text-align: center;
+            font-size: 19px;
+            margin-top: .3rem;
+        }
+    .contents{
+        position: absolute;
+        top: 1.2rem;
+        overflow: auto;
+        width: 100%;
+    }
+        .icon-left{
+            position: absolute;
+            top: 0.4rem;
+        }
+    </style>
+{% endblock %}
+ {% block content %}
+
+<header class="bar">
+     <a href="{{url_for('appMe.index')}}"><span class="icon icon-left">返回</span></a>
+  <h1 class="title">我的收藏</h1>
+
+</header>
+<div class="weui-cells contents">
+    <div style="display:none" class="hide_ul"></div>
+
+           <!--<div class="weui-cell weui-cell_swiped">-->
+            <!--<a href="#">-->
+                <!--<div class="weui-cell__bd" style="transform: translate3d(0px, 0px, 0px);">-->
+              <!--<div class="weui-cell">-->
+                <!--<div class="weui-cell__bd">-->
+                  <!--<p id="title">话务员</p>-->
+                <!--</div>-->
+                <!--<div class="weui-cell__ft">左滑删除</div>-->
+              <!--</div>-->
+            <!--</div>-->
+            <!--</a>-->
+            <!--<div class="weui-cell__ft">-->
+              <!--<a class="weui-swiped-btn weui-swiped-btn_warn delete-swipeout" href="javascript:">删除</a>-->
+            <!--</div>-->
+          <!--</div>-->
+
+
+        </div>
+
+
+
+{% endblock %}
+
+
+ {% block js %}
+
+<script src="{{buildStaticUrl('/app/jquery-3.3.1.min.js')}}"></script>
+<script src="{{buildStaticUrl('/app/jqweui/dist/js/jquery-weui.js')}}"></script>
+<script src="{{buildStaticUrl('/app/jqweui/dist/lib/jquery-2.1.4.js')}}"></script>
+
+
+
+
+
+<script>
+ $(document).ready(function(){
+  $.ajax({
+        //这个id是获取到微信授权后开始的，这里先写死
+     url:"http://127.0.0.1:5000/api/getcollect/?id="+"1",
+     dataType:'json',
+     type:'get',
+     async:false,
+     success: function (res) {
+          for (var i =0;i<res.data.length;i++){
+         $(".hide_ul").after(
+             "<div class='weui-cell weui-cell_swiped'>" +
+                   "<a href="+'http://127.0.0.1:5000/app/apphome/detal/?id='+res.data[i].pid+">" +
+                   "<div class='weui-cell__bd' style='transform: translate3d(0px, 0px, 0px);'>" +
+
+
+                   "<div class='weui-cell'><div class='weui-cell__bd'>" +
+                   "<p id='title'>"+res.data[i].title+"</p></div>"
+                   // +"<div class='weui-cell__ft'>左滑删除</div></div></div></a>" +
+                   // "<div class='weui-cell__ft'>" +
+                   // "<a class='weui-swiped-btn weui-swiped-btn_warn delete-swipeout' href='javascript:'>删除</a></div></div>"
+         )
+
+          }
+        }
+    });
+
+});
+
+
+
+$('.weui-cell_swiped').swipeout();
+</script>
+
+
+
+{% endblock %}

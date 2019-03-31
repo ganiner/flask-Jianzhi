@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>兼职客儿管理系统</title>
+	<meta name="keywords" content="兼职客儿,兼职">
+	<meta name="description" content="兼职客儿,兼职">
+	<link rel="shortcut icon" href="{{buildStaticUrl('/images/favicon.ico')}}" />
+	<link rel="stylesheet" type="text/css" href="{{buildStaticUrl('/admin/css/layui.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{buildStaticUrl('/admin/css/jianzhione.css')}}">
+    <script src="{{ buildStaticUrl('/admin/common.js') }}"></script>
+    <script src="{{ buildStaticUrl('/xadmin.js') }}"></script>
+	 {%block css %}{% endblock %}
+    <style>
+
+    </style>
+</head>
+
+<body bgcolor="#E7E8EB">
+
+
+<div class="head layui-bg-blue">
+		<ul class="layui-nav layui-bg-blue" lay-filter="">
+
+			<div class="left">
+				<a href="#"><img src="{{buildStaticUrl('/images/admin/logo.png')}}"></a>
+
+				<li class="layui-nav-item  layui-this">
+					<a href="">平台管理</a>
+					<dl class="layui-nav-child">
+					  <dd><a href="">WEB后台</a></dd>
+					  <dd><a href="">微站后台</a></dd>
+					  <dd><a href="">微信管理</a></dd>
+					</dl>
+				</li>
+
+				<li class="layui-nav-item"><a href="{{url_for('MainRoute.index')}}">站点首页</a></li>
+			</div>
+
+			<div class="right">
+				<li class="layui-nav-item"><a href="#"><i class="layui-icon layui-icon-username" style="font-size:18px;color: red;"></i>{{current_user.nickname}}</a>
+					<dl class="layui-nav-child">
+					  <dd><a href="">我的账号</a></dd>
+					  <dd><a href="{{url_for('adminUserRoute.logout')}}">退出登陆</a></dd>
+					</dl>
+				</li>
+			</div>
+
+		</ul>
+	</div>
+
+
+
+<div class="layui-main">
+
+    <div class="contents">
+      <div class="contents-head">
+        <span class="left">兼职模块</span>
+        <!--<span class="right">名字</span>-->
+      </div>
+
+        <div class="content-left left">
+        <ul class="layui-nav layui-nav-tree layui-bg-blue " lay-filter="test">
+      <li class="layui-nav-item  layui-nav-itemed">
+        <a href="javascript:;">业务菜单</a>
+        <dl class="layui-nav-child">
+            <dd><a href="{{url_for('jianzhiRoute.jzmanagement')}}"><i class="layui-icon layui-icon-login-wechat" style="font-size:18px;"></i>兼职管理</a></dd>
+            <dd><a href="{{url_for('jianzhiRoute.application')}}"><i class="layui-icon layui-icon-login-wechat" style="font-size:18px;"></i>求职管理</a></dd>
+            <dd><a href="{{url_for('jianzhiRoute.merchants')}}"><i class="layui-icon layui-icon-login-wechat" style="font-size:18px;"></i>商家管理</a></dd>
+            <dd><a href="{{url_for('jianzhiRoute.message')}}"><i class="layui-icon layui-icon-login-wechat" style="font-size:18px;"></i>通知管理</a></dd>
+
+        </dl>
+      </li>
+			<li class="layui-nav-item layui-nav-itemed">
+        <a href="javascript:;">账号管理</a>
+        <dl class="layui-nav-child">
+
+            <dd><a href="{{url_for('jianzhiRoute.mymessage')}}"><i class="layui-icon layui-icon-username" style="font-size:18px;"></i>我的账号</a></dd>
+                        <dd><a href="{{url_for('jianzhiRoute.admin_list')}}"><i class="layui-icon layui-icon-login-wechat" style="font-size:18px;"></i>管理员列表</a></dd>
+			<dd><a href="{{url_for('jianzhiRoute.user_list')}}"><i class="layui-icon layui-icon-username" style="font-size:18px;"></i>用户列表</a></dd>
+			            <dd><a href="{{url_for('jianzhiRoute.groups')}}"><i class="layui-icon layui-icon-login-wechat" style="font-size:18px;"></i>用户组管理</a></dd>
+        </dl>
+      </li>
+
+
+      <li class="layui-nav-item layui-nav-itemed">
+        <a href="javascript:;">统计模块</a>
+        <dl class="layui-nav-child">
+
+            <dd><a href="{{url_for('jianzhiRoute.statisticsday')}}"><i class="layui-icon layui-icon-username" style="font-size:18px;"></i>日统计</a></dd>
+            <dd><a href=""><i class="layui-icon layui-icon-username" style="font-size:18px;"></i>月统计</a></dd>
+        </dl>
+      </li>
+
+
+      <li class="layui-nav-item layui-nav-itemed"><a href="javascript:;">系统管理</a>
+	   <dl class="layui-nav-child">
+            <dd><a href="{{url_for('jianzhiRoute.jzmanagement')}}"><i class="layui-icon layui-icon-login-wechat" style="font-size:18px;"></i>系统设置</a></dd>
+            <dd><a href="{{url_for('jianzhiRoute.application')}}"><i class="layui-icon layui-icon-login-wechat" style="font-size:18px;"></i>日志管理</a></dd>
+            <dd><a href="{{url_for('jianzhiRoute.merchants')}}"><i class="layui-icon layui-icon-login-wechat" style="font-size:18px;"></i>系统信息</a></dd>
+
+        </dl>
+	  </li>
+
+    </ul>
+    </div>
+
+        <div class="content-right">
+
+     {% block content %}{% endblock %}
+    </div>
+
+    </div>
+</div>
+<script src="{{buildStaticUrl('/admin/jquery-3.3.1.min.js')}}"></script>
+<script src="{{buildStaticUrl('/admin/layui.all.js')}}"></script>
+
+{% block js %}{% endblock %}
+
+
+</body>
+</html>

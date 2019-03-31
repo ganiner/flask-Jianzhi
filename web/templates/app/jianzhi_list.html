@@ -1,0 +1,155 @@
+{% extends "app/others_bases.html" %}
+
+{%block css %}
+<link rel="stylesheet" type="text/css" href="{{buildStaticUrl('/app/jqweui/dist/lib/weui.min.css')}}">
+<link rel="stylesheet" type="text/css" href="{{buildStaticUrl('/app/jqweui/dist/css/jquery-weui.css')}}">
+    <style>
+        .bar{
+            position: relative;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            height: 2em;
+            padding: 0 .5rem;
+            background-color: #f7f7f8;
+            backface-visibility: hidden;
+        }
+
+        .title{
+            text-align: center;
+            font-size: 19px;
+           line-height: 0.8em;
+            padding: 0.3em;
+        }
+    .contents{
+        position: absolute;
+        top: 1.2rem;
+        overflow: auto;
+        width: 100%;
+    }
+        .icon-left{
+            position: absolute;
+            top: 0.2rem;
+        }
+    </style>
+{% endblock %}
+ {% block content %}
+<header class="bar">
+     <a href="{{url_for('appMe.index')}}"><span class="icon icon-left">返回</span></a>
+  <h1 class="title">我的兼职</h1>
+
+</header>
+
+<div class="weui-tab">
+  <div class="weui-navbar">
+
+    <a class="weui-navbar__item weui-bar__item--on" href="#tab1">
+      已报名
+    </a>
+      <!--完全可以使用页面-->
+      <a class="weui-navbar__item" href="#tab3">
+      已录用
+    </a>
+    <a class="weui-navbar__item" href="#tab2">
+      待签到
+    </a>
+
+      <a class="weui-navbar__item" href="#tab4">
+      已结算
+    </a>
+
+
+  </div>
+  <div class="weui-tab__bd">
+    <div id="tab1" class="weui-tab__bd-item weui-tab__bd-item--active">
+      <div class="weui-cells contents">
+
+          <div class="weui-cell weui-cell_swiped">
+            <div class="weui-cell__bd" style="transform: translate3d(0px, 0px, 0px);">
+              <div class="weui-cell">
+                <div class="weui-cell__bd">
+                  <p>话务员</p>
+                </div>
+                <div class="weui-cell__ft">左滑删除</div>
+              </div>
+            </div>
+            <div class="weui-cell__ft">
+              <a class="weui-swiped-btn weui-swiped-btn_warn delete-swipeout" href="javascript:">删除</a>
+            </div>
+          </div>
+
+</div>
+    </div>
+    <div id="tab2" class="weui-tab__bd-item ">
+      <div class="weui-cells contents">
+
+          <div class="weui-cell weui-cell_swiped">
+            <div class="weui-cell__bd" style="transform: translate3d(0px, 0px, 0px);">
+              <div class="weui-cell">
+                <div class="weui-cell__bd">
+                  <p>话务员2</p>
+                </div>
+                <div class="weui-cell__ft">左滑删除</div>
+              </div>
+            </div>
+            <div class="weui-cell__ft">
+              <a class="weui-swiped-btn weui-swiped-btn_warn delete-swipeout" href="javascript:">删除</a>
+            </div>
+          </div>
+
+</div>
+    </div>
+    <div id="tab3" class="weui-tab__bd-item">
+      <div class="weui-cells contents">
+
+          <div class="weui-cell weui-cell_swiped">
+            <div class="weui-cell__bd" style="transform: translate3d(0px, 0px, 0px);">
+              <div class="weui-cell">
+                <div class="weui-cell__bd">
+                  <p>话务员3</p>
+                </div>
+                <div class="weui-cell__ft">左滑删除</div>
+              </div>
+            </div>
+            <div class="weui-cell__ft">
+              <a class="weui-swiped-btn weui-swiped-btn_warn delete-swipeout" href="javascript:">删除</a>
+            </div>
+          </div>
+
+</div>
+    </div>
+    <div id="tab4" class="weui-tab__bd-item">
+      <div class="weui-cells contents">
+
+          <div class="weui-cell weui-cell_swiped">
+            <div class="weui-cell__bd" style="transform: translate3d(0px, 0px, 0px);">
+              <div class="weui-cell">
+                <div class="weui-cell__bd">
+                  <p>话务员4</p>
+                </div>
+                <div class="weui-cell__ft">左滑删除</div>
+              </div>
+            </div>
+            <div class="weui-cell__ft">
+              <a class="weui-swiped-btn weui-swiped-btn_warn delete-swipeout" href="javascript:">删除</a>
+            </div>
+          </div>
+
+</div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+{% endblock %}
+ {% block js %}
+
+<script src="{{buildStaticUrl('/app/jquery-3.3.1.min.js')}}"></script>
+<script src="{{buildStaticUrl('/app/jqweui/dist/js/jquery-weui.js')}}"></script>
+<script src="{{buildStaticUrl('/app/jqweui/dist/lib/jquery-2.1.4.js')}}"></script>
+
+
+{% endblock %}

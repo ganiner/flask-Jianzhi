@@ -1,0 +1,115 @@
+{% extends "admin/jianzhi/jianzhi_base.html" %}
+
+
+
+{%block css %}
+<style>
+*{padding:0px;margin:0px; }
+tr{
+	height:55px;
+	border: 1px solid #c9c9c9;
+
+}
+</style>
+{% endblock %}
+{% block content %}
+
+		    <table class="layui-table " lay-skin="nob">
+      <colgroup>
+        <col width="20%" >
+        <col width="60%">
+        <col>
+      </colgroup>
+      <tbody>
+    <thead>用户信息</thead>
+        <tr>
+          <td class="tit_acount">登陆名</td>
+          <td class="msg">root</td>
+        </tr>
+          <tr>
+          <td class="tit_username">昵称</td>
+          <td class="msg">root</td>
+          <td><div>
+          	<button class="layui-btn " onclick="modifys()">修改</button>
+          </div></td>
+        </tr>
+
+          <tr>
+          <td class="tit_mail">邮箱</td>
+          <td class="msg">admin@163.com</td>
+          <td><div>
+          	<button class="layui-btn " onclick="modifys()">修改</button>
+          </div></td>
+        </tr>
+
+          <tr>
+          <td class="tit_tel">电话号码</td>
+          <td class="msg">110</td>
+          <td><div>
+          	<button class="layui-btn " onclick="modifys()">修改</button>
+          </div></td>
+        </tr>
+      </tbody>
+    </table>
+          
+
+
+{% endblock %}
+
+
+
+
+{% block js %}
+<script src="{{buildStaticUrl('/admin/jquery-3.3.1.min.js')}}"></script>
+<script>
+//注意：导航 依赖 element 模块，否则无法进行功能性操作
+layui.use('element', function(){
+  var element = layui.element;
+
+});
+</script>
+
+
+<script>
+    function modifys(){
+        layui.use('layer', function(){
+            var layer = layui.layer;
+        layer.open({
+        type: 1,
+        title:'修改'+$(".tit_tel").text(),
+        anim:1,
+        offset:'100px',
+        area: ['720px', '300px'],
+       content: '<input class="layui-input" id="new_input">' +
+       '<button id="modfily" class="layui-btn">点击修改</button>',
+});
+    $("#modfily").click(function(){
+
+    var username=$("#new_input").val();
+    var mail=$("#new_input").val();
+    var tel=$("#new_input").val();
+     $.ajax({
+         url:common_ops.buildUrl("/api/userMessage/"),
+                type:'POST',
+                data:{ 'username':username,'mail':mail,'tel':tel},
+                dataType:'json',
+                success:function(res){
+                    common_ops.alert( res.msg );
+                }
+     });
+});
+});
+
+    }
+
+</script>
+
+
+
+{% endblock %}
+
+
+
+
+
+

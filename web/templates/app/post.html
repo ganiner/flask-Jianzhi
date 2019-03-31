@@ -1,0 +1,365 @@
+{% extends "app/app_base.html" %}
+
+{%block css %}
+<link rel="stylesheet" type="text/css" href="{{buildStaticUrl('/app/sui/dist/css/sm.min.css')}}">
+<link rel="stylesheet" type="text/css" href="{{buildStaticUrl('/app/sui/dist/css/sm-extend.min.css')}}">
+
+
+<style>
+html,body,*,li,p{padding: 0;margin:0;list-style: none;}
+.content{
+    bottom: 20px;
+}
+.headers img{
+  width: 55px;
+  height: 55px;
+  border-radius:100%;
+  border:3px solid #CFCFCF;
+  position: absolute;
+  top: 20px;
+  left: 21.5px;
+}
+
+.me-messages span{
+  color: #fff;
+}
+
+.me-user-num ul{
+  width: 100%;
+  overflow: hidden;
+  padding: 7px 0;
+}
+
+.money-letter ul{
+  width: 100%;
+  overflow: hidden;
+}
+.money-letter ul li{
+  float: left;
+  display: block;
+  position: relative;
+  width: 50%;
+  padding-left: 10px;
+
+}
+
+.money-letter b{
+  color: red;
+
+}
+body{
+  background-color: #EFEFF4;
+}
+</style>
+{% endblock %}
+
+ {% block content %}
+<header class="bar bar-nav">
+  <h1 class='title'>发表兼职</h1>
+</header>
+<div class="content">
+  <div class="list-block" style="margin: 0rem;">
+    <ul>
+      <!-- Text inputs -->
+      <li>
+        <div class="item-content">
+          <div class="item-media"><i class="icon icon-form-name"></i></div>
+          <div class="item-inner">
+            <div class="item-title label">兼职标题</div>
+            <div class="item-input">
+              <input id="jz_titles" type="text" placeholder="请输入兼职标题">
+            </div>
+          </div>
+        </div>
+      </li>
+
+
+       <li>
+        <div class="item-content">
+          <div class="item-media"><i class="icon icon-form-gender"></i></div>
+          <div class="item-inner">
+            <div class="item-title label">兼职类型</div>
+            <div class="item-input">
+              <select autocomplete="off" id="jz_types">
+                 <option value="派单">派单</option>
+        <option value="充场">充场</option>
+        <option value="安保">安保</option>
+    <option value="促销">促销</option>
+    <option value="礼仪">礼仪</option>
+    <option value="模特">模特</option>
+    <option value="销售">销售</option>
+    <option value="助教">助教</option>
+    <option value="文员">文员</option>
+    <option value="设计">设计</option>
+    <option value="实习">实习</option>
+    <option value="服务员">服务员</option>
+    <option value="打包分拣">打包分拣</option>
+    <option value="问卷调查">问卷调查</option>
+    <option value="地摊拉访">地摊拉访</option>
+    <option value="话务客服">话务客服</option>
+    <option value="审核录入">审核录入</option>
+    <option value="其他">其他</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </li>
+
+   <li>
+        <div class="item-content">
+          <div class="item-media"><i class="icon icon-form-gender"></i></div>
+          <div class="item-inner">
+            <div class="item-title label">时间类型</div>
+            <div class="item-input">
+              <select id="jz_time_type">
+ <option value="短期兼职">短期兼职</option>
+        <option value="长期兼职">长期兼职</option>
+        <option value="周末兼职">周末兼职</option>
+    <option value="其他兼职">其他兼职</option>
+    <option value="实习">实习</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </li>
+
+
+ <li>
+        <div class="item-content">
+          <div class="item-media"><i class="icon icon-form-name"></i></div>
+          <div class="item-inner">
+            <div class="item-title label">职位描述</div>
+            <div class="item-input">
+                <textarea id="jz_describe" placeholder="请输入工作的内容"></textarea>
+            </div>
+          </div>
+        </div>
+      </li>
+
+
+     
+ <li>
+        <div class="item-content">
+          <div class="item-media"><i class="icon icon-form-name"></i></div>
+          <div class="item-inner">
+            <div class="item-title label">招聘人数</div>
+            <div class="item-input">
+              <input id="jz_people" type="text" placeholder="请输入招聘人数">
+            </div>
+          </div>
+        </div>
+      </li>
+     
+ <li>
+        <div class="item-content">
+          <div class="item-media"><i class="icon icon-form-name"></i></div>
+          <div class="item-inner">
+            <div class="item-title label">薪资待遇</div>
+            <div class="item-input">
+              <input id="jz_wages" type="text" placeholder="请输入薪资" style="display:inline;width:60%;">
+              <select id="jz_benefits" style="display:inline;width:30%;">
+                <option value="元/小时">元/小时</option>
+                <option value="元/天">元/天</option>
+                <option value="元/周">元/周</option>
+                <option value="元/月">元/月</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </li>
+
+  <li>
+        <div class="item-content">
+          <div class="item-media"><i class="icon icon-form-name"></i></div>
+          <div class="item-inner">
+            <div class="item-title label">联系人名</div>
+            <div class="item-input">
+              <input id="jz_connections" type="text" placeholder="请输入联系人名">
+            </div>
+          </div>
+        </div>
+      </li>
+
+ <li>
+        <div class="item-content">
+          <div class="item-media"><i class="icon icon-form-name"></i></div>
+          <div class="item-inner">
+            <div class="item-title label">联系方式</div>
+            <div class="item-input">
+              <input id="jz_connection_type" type="text" placeholder="请输入联系方式">
+            </div>
+          </div>
+        </div>
+      </li>
+
+ <li>
+        <div class="item-content">
+          <div class="item-media"><i class="icon icon-form-name"></i></div>
+          <div class="item-inner">
+            <div class="item-title label">工作地点(使用地图还是选择)</div>
+            <div class="item-input">
+              <input id="jz_address" type="text" placeholder="请输入联系方式">
+            </div>
+          </div>
+        </div>
+      </li>
+
+
+      <!-- Date -->
+
+
+      <li>
+        <div class="item-content">
+          <div class="item-media"><i class="icon icon-form-calendar"></i></div>
+          <div class="item-inner">
+            <div class="item-title label">开始时间</div>
+            <div class="item-input">
+                <input  type="text" id='date_input1'/>
+      </div>
+          </div>
+        </div>
+      </li>
+
+       <li>
+        <div class="item-content">
+          <div class="item-media"><i class="icon icon-form-calendar"></i></div>
+          <div class="item-inner">
+            <div class="item-title label">结束时间</div>
+            <div class="item-input">
+                <input type="text" id='date_input2'/>
+
+      </div>
+          </div>
+        </div>
+      </li>
+   <li>
+        <div class="item-content">
+          <div class="item-media"><i class="icon icon-form-toggle"></i></div>
+          <div class="item-inner">
+            <div class="item-title label">是否置顶</div>
+            <div class="item-input">
+              <label class="label-switch">
+                <input type="checkbox" id="is_top">
+                <div class="checkbox"></div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </li>
+
+
+      <li class="align-top">
+        <div class="item-content">
+          <div class="item-media"><i class="icon icon-form-comment"></i></div>
+          <div class="item-inner">
+            <div class="item-title label" style="line-height:65px;">其他要求</div>
+            <div class="item-input">
+              <textarea id="jz_other" placeholder="其他要求"></textarea>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="content-block">
+    <div class="row">
+      <div class="col-50"><a href="#" class="button button-big button-fill button-danger" >取消</a></div>
+      <div id="submits" class="col-50"><a href="#" class="button button-big button-fill button-success">提交</a></div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+ {% block js %}
+<script type='text/javascript' src='http://g.alicdn.com/sj/lib/zepto/zepto.min.js'></script>
+<script src="{{buildStaticUrl('/app/sui/dist/js/sm.min.js')}}"></script>
+<script src="{{buildStaticUrl('/app/sui/dist/js/sui/dist/js/sm-extend.min.js')}}"></script>
+<!--<script src="{{ buildStaticUrl('/admin/common.js') }}"></script>-->
+
+
+
+<script>
+
+
+ $("#date_input1").datetimePicker({
+    value: ['2019', '01', '01', '12', '00']
+
+     // min:dates
+  });
+
+  $("#date_input2").datetimePicker({
+    value: ['2019', '01', '01', '19', '34']
+  });
+
+$(document).ready(function(){
+    $.ajax({
+        url:"http://127.0.0.1:5000/api/app_posts/?id="+"1",
+         type:'GET',
+         // async:false,一步推荐使用，查看浏览器的提示
+         success(res){
+             if (res.code==100)
+             {
+                 $.confirm("是否注册为商家","成为商家",function () {
+                     window.location.href="http://127.0.0.1:5000/app/appme/add_sj/"
+                 },function () {
+                     window.location.href="http://127.0.0.1:5000/app/apphome/"
+
+                 })
+             }
+         },
+         error: function(res){
+                $.toast(res.msg);
+            }
+
+
+     })
+});
+
+</script>
+
+<script>
+
+
+    $("#submits").click(
+        //记得去获取uid就是发帖的人呀
+        function () {
+             var titles=$("#jz_titles").val()
+            var jz_types=$('#jz_types').val()
+            var jz_time_type=$("#jz_time_type").val()
+            var jz_describe=$("#jz_describe").val()
+            var jz_people=$("#jz_people").val()
+            var jz_wages=$("#jz_wages").val()
+            var jz_connections=$("#jz_connections").val()
+            var jz_connection_type=$("#jz_connection_type").val()
+            var jz_address=$("#jz_address").val()
+            var date_input1=$("#date_input1").val()
+             var date_input2=$("#date_input2").val()
+             var jz_other=$("#jz_other").val()
+            var jz_benefits=$("#jz_benefits").val()
+            var is_zhiding=$("#is_top").prop("checked")
+     //      后面要写验证哦
+    console.log(is_zhiding)
+     $.ajax({
+         url:"http://127.0.0.1:5000/api/app_posts/",
+                type:'POST',
+         async:false,
+                data:{ 'title':titles,'content':jz_describe,'wages': jz_wages,'benefits':jz_benefits,'need_num':jz_people
+                ,'start_time':date_input1,'end_time':date_input2,'addres':jz_address,'other':jz_other,'jianzhi_type':jz_types,
+                    'jianzhi_time_type':jz_time_type,'is_zhiding':is_zhiding,'people':jz_connections,'people_tel':jz_connection_type},
+                dataType:'json',
+         success(res){
+             $.toast(res.msg);
+         },
+         error: function(res){
+                $.toast(res.msg);
+            }
+
+
+     })
+        }
+    )
+
+
+</script>
+{% endblock %}

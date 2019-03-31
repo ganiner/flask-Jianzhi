@@ -1,0 +1,140 @@
+{% extends "admin/jianzhi/jianzhi_base.html" %}
+
+
+{% block content %}
+
+	 <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+      <ul class="layui-tab-title">
+        <li class="layui-this">通告管理</li>
+        <li>广告设置中心</li>
+
+      </ul>
+    <div class="layui-tab-content">
+
+    <div class="layui-tab-item layui-show">
+      <!-- 后面的公告可以做成轮播的，增加金额 -->
+
+             <button class="layui-btn" onclick="x_admin_show('添加公告','{{url_for("jianzhiRoute.add_messages")}}','600','400')">添加通告</button>
+
+
+     <table class="layui-hide" id="inform"></table>
+    </div>
+
+
+
+
+<!--广告设置-->
+
+    <div class="layui-tab-item">
+         <button class="layui-btn" onclick="x_admin_show('添加广告','{{url_for("jianzhiRoute.add_ad")}}','600','400')">添加广告</button>
+
+<table class="layui-hide" id="ad"></table>
+    </div>
+
+
+
+
+      </div>
+    </div>      
+          
+
+
+
+{% endblock %}
+
+{% block js %}
+<script>
+//注意：导航 依赖 element 模块，否则无法进行功能性操作
+layui.use('element', function(){
+  var element = layui.element;
+
+});
+</script>
+
+
+<script>
+layui.use(['element', 'layer'], function(){
+  var element = layui.element
+  ,layer = layui.layer;
+  
+  element.on('tab(docDemoTabBrief)', function(data){
+    // layer.msg('切到到了'+ data.index + '：' + this.innerHTML);
+      if (data.index==0){
+          layui.use('table', function(){
+  var table = layui.table;
+
+  table.render({
+    elem: '#inform'
+    ,url:'/api/inform/'
+    ,cols: [[
+      {field:'content', width:'70%', title: '公告内容'}
+      ,{field:'time', width:'30%', title: '公告时间', sort: true}
+
+    ]]
+    ,page: true
+  });
+});
+      }
+      else if (data.index==1){
+          layui.use('table', function(){
+  var table = layui.table;
+
+  table.render({
+    elem: '#ad'
+    ,url:'/api/advertising/'
+    ,cols: [[
+      {field:'title', width:'10%', title: '广告标题'}
+      ,{field:'content', width:'40%', title: '广告内容'}
+       ,{field:'link', width:'20%', title: '广告链接'}
+        ,{field:'time', width:'30%', title: '发布时间', sort: true}
+
+    ]]
+    ,page: true
+  });
+});
+      }
+
+
+  });
+});
+</script>
+
+<!--公告设置-->
+<script>
+layui.use('table', function(){
+  var table = layui.table;
+
+  table.render({
+    elem: '#inform'
+    ,url:'/api/inform/'
+    ,cols: [[
+      {field:'content', width:'70%', title: '公告内容'}
+      ,{field:'time', width:'30%', title: '公告时间', sort: true}
+
+    ]]
+    ,page: true
+  });
+});
+</script>
+
+<!--广告设置-->
+<script>
+layui.use('table', function(){
+  var table = layui.table;
+
+  table.render({
+    elem: '#ad'
+    ,url:'/api/advertising/'
+    ,cols: [[
+      {field:'title', width:'10%', title: '广告标题'}
+      ,{field:'content', width:'40%', title: '广告内容'}
+       ,{field:'link', width:'20%', title: '广告链接'}
+        ,{field:'time', width:'30%', title: '发布时间', sort: true}
+
+    ]]
+    ,page: true
+  });
+});
+</script>
+
+{% endblock %}

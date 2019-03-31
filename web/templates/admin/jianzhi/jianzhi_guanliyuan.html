@@ -1,0 +1,94 @@
+{% extends "admin/jianzhi/jianzhi_base.html" %}
+
+
+{% block content %}
+
+	 <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+      <ul class="layui-tab-title">
+        <li class="layui-this">管理员列表</li>
+       
+
+      </ul>
+    <div class="layui-tab-content">
+
+    <div class="layui-tab-item layui-show">
+      <!-- 后面的公告可以做成轮播的，增加金额 -->
+          <table class="layui-table">
+  <colgroup>
+    <col width="150">
+    <col width="200">
+    <col>
+  </colgroup>
+  <thead>
+    <tr>
+      <th>登录名</th>
+        <th>昵称</th>
+      <th>性别</th>
+      <th>邮箱</th>
+      <th>手机</th>
+      <th>用户组</th>
+       <th>操作</th>
+    </tr> 
+  </thead>
+  <tbody>
+   {% if user_info %}
+   {%for item in user_info%}
+    <tr>
+      <td>{{item.account}}</td>
+        <td>{{item.nickname}}</td>
+      <td>{{item.sex}}</td>
+      <td>{{item.mail}}</td>
+      <td>{{item.tel}}</td>
+      <td>{{item.groud}}</td>
+      <td class="td-manage">
+      </a>
+       <a title="编辑" onclick="member_del(this,'del')" href="javascript:;">
+        <i class="layui-icon">&#xe642;</i>
+      </a>
+       <a title="删除" onclick="member_del(this,'del')" href="javascript:;">
+        <i class="layui-icon">&#xe640;</i>
+      </a>
+    </td>
+    </tr>
+ {% endfor %}
+            {% else %}
+                <tr style="text-align: center"><td colspan="8">暂无数据</td></tr>
+            {% endif %}
+  </tbody>
+</table>
+    </div>
+    <div class="layui-tab-item">
+
+
+    </div>
+
+
+
+
+      </div>
+    </div>      
+          
+
+
+
+{% endblock %}
+
+{% block js %}
+<script>
+//注意：导航 依赖 element 模块，否则无法进行功能性操作
+layui.use('element', function(){
+  var element = layui.element;
+
+});
+</script>
+<script>
+layui.use(['element', 'layer'], function(){
+  var element = layui.element
+  ,layer = layui.layer;
+  
+  element.on('tab(docDemoTabBrief)', function(data){
+    layer.msg('切到到了'+ data.index + '：' + this.innerHTML);
+  });
+});
+</script>
+{% endblock %}
