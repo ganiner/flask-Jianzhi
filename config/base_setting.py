@@ -8,7 +8,7 @@ SERVER_PORT=5000
 SQLALCHEMY_ECHO = True
 # mysql配置
 
-SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:916149@127.0.0.1:3306/jianzhikeer2?charset=utf8"
+SQLALCHEMY_DATABASE_URI = "mysql+pymysql://user:password@127.0.0.1:3306/dbname?charset=utf8"
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
